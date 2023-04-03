@@ -1,0 +1,2374 @@
+{
+  "version": 2,
+  "events": [
+    {
+      "EventNum": 0,
+      "PCRIndex": 0,
+      "EventType": "EV_NO_ACTION",
+      "Digest": "0000000000000000000000000000000000000000",
+      "EventSize": 37,
+      "SpecID": [
+        {
+          "Signature": "Spec ID Event03",
+          "platformClass": 0,
+          "specVersionMinor": 0,
+          "specVersionMajor": 2,
+          "specErrata": 0,
+          "uintnSize": 2,
+          "numberOfAlgorithms": 2,
+          "Algorithms": [
+            {
+              "Algorithm[0]": null,
+              "algorithmId": "sha1",
+              "digestSize": 20
+            },
+            {
+              "Algorithm[1]": null,
+              "algorithmId": "sha256",
+              "digestSize": 32
+            }
+          ],
+          "vendorInfoSize": 0
+        }
+      ]
+    },
+    {
+      "EventNum": 1,
+      "PCRIndex": 0,
+      "EventType": "EV_S_CRTM_VERSION",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "1489f923c4dca729178b3e3233458550d8dddf29"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+        }
+      ],
+      "EventSize": 2,
+      "Event": "0000"
+    },
+    {
+      "EventNum": 2,
+      "PCRIndex": 0,
+      "EventType": "EV_EFI_PLATFORM_FIRMWARE_BLOB",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "ea27e1473de0fd1071f9d087caed371faee144cf"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "46274f0827aff146e57ade2616074d56d03f36d937203fa553cb4b40e9a5f635"
+        }
+      ],
+      "EventSize": 16,
+      "Event": {
+        "BlobBase": 8519680,
+        "BlobLength": 917504
+      }
+    },
+    {
+      "EventNum": 3,
+      "PCRIndex": 0,
+      "EventType": "EV_EFI_PLATFORM_FIRMWARE_BLOB",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "5d1d86e24814b5d1d82f317267375e16ad90f2d1"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "d212f1114cb97c6f2a9a88d38899bdf4445bc7e827b0a4efb431e6307cd34151"
+        }
+      ],
+      "EventSize": 16,
+      "Event": {
+        "BlobBase": 9437184,
+        "BlobLength": 11534336
+      }
+    },
+    {
+      "EventNum": 4,
+      "PCRIndex": 7,
+      "EventType": "EV_EFI_VARIABLE_DRIVER_CONFIG",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "d4fdd1f14d4041494deb8fc990c45343d2277d08"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "ccfc4bb32888a345bc8aeadaba552b627d99348c767681ab3141f5b01e40a40e"
+        }
+      ],
+      "EventSize": 53,
+      "Event": {
+        "VariableName": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "UnicodeNameLength": 10,
+        "VariableDataLength": 1,
+        "UnicodeName": "SecureBoot",
+        "VariableData": {
+          "Enabled": "Yes"
+        }
+      }
+    },
+    {
+      "EventNum": 5,
+      "PCRIndex": 7,
+      "EventType": "EV_EFI_VARIABLE_DRIVER_CONFIG",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "d9a7a63f7e87e7fb20a477b5b5e9407c9d57497f"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "9af72c68c7de19603879020c14f88c2bfa8d06503153866b9888c48d0c5d2a58"
+        }
+      ],
+      "EventSize": 906,
+      "Event": {
+        "VariableName": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "UnicodeNameLength": 2,
+        "VariableDataLength": 870,
+        "UnicodeName": "PK",
+        "VariableData": [
+          {
+            "SignatureType": "a5c059a1-94e4-4aa7-87b5-ab155c2bf072",
+            "SignatureListSize": 870,
+            "SignatureHeaderSize": 0,
+            "SignatureSize": 842,
+            "Keys": [
+              {
+                "SignatureOwner": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+                "SignatureData": "308203363082021e02090094cbaf49cd56a7d8300d06092a864886f70d01010b0500305d312d302b06035504030c245562756e7475204f564d462053656375726520426f6f742028504b2f4b454b206b657929312c302a06092a864886f70d010901161d7562756e74752d646576656c406c697374732e7562756e74752e636f6d301e170d3138303632303231343834365a170d3238303631373231343834365a305d312d302b06035504030c245562756e7475204f564d462053656375726520426f6f742028504b2f4b454b206b657929312c302a06092a864886f70d010901161d7562756e74752d646576656c406c697374732e7562756e74752e636f6d30820122300d06092a864886f70d01010105000382010f003082010a0282010100cbb02be9779e5e71e9e6eb1d855286cffb8cf00a7934ccbb83109536cda0e66f55084e71e76390135a3cf75deb74c1c581409c985404b97d856fc6079167f62b53d328791bae1708169fcb7ac92c5f0bf7d54351812ebc1f9addba18013093a159ce0dbf21d0898e44117cb202999bae42265810f7760665b8cb78f9ee6b0854d84547d871722d91168dddc93f1b2d9731a3f898b0bc44dd157fdf1db9eb5be7cb08b1272cb67f60fa3a59ed26b554c4a875a6e86e565086e9ccfcce386a6208a1dd23e545b17ef0d5305d3210aa9f17292e7ecd457104830f8e43982738b47d913288f8c464bb1f690c6679bfd54c70f662da26531d177d6eb88818e2ff7e8d0203010001300d06092a864886f70d01010b0500038201010018b02d52cedf9dfe68294ec4efec2852b1cfd37597030853348f5e4eced82cf8300b6a860069337546546f3738cd2e12688b484e56187967d9f4fbcf84f1b221939eb8132851e0649ec0b675a4555f5d5a01c80e9d0871303d168d2446e67439ad7459fcdc18bdcb4947cd65e359034e836a8c1223277153873cfc847c8cbff0c2877721fd7d878fb89bfb520f7e81c593e983ffa7becb8eb01d64b9bb406897dc385413306b71589e21602ab0269e88aea366ebe5f05b807ffbdf6ea527b41bfc7e2604b2b3fdcde2c383c5f8a431b29734e2d25dbd0fa90c4b535225d5134cdc062a7610980f54ad2cccee47ea0b576dfca84ea0ebd4329a0f8c7d243df229"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "EventNum": 6,
+      "PCRIndex": 7,
+      "EventType": "EV_EFI_VARIABLE_DRIVER_CONFIG",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "2ebbf8ca84499166ca8f12aa7f259381c316b9b6"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "a3ee7d11aa63c9466e9b23a5226e3ae3e3be919988de6773fc26beab85140f5f"
+        }
+      ],
+      "EventSize": 2468,
+      "Event": {
+        "VariableName": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "UnicodeNameLength": 3,
+        "VariableDataLength": 2430,
+        "UnicodeName": "KEK",
+        "VariableData": [
+          {
+            "SignatureType": "a5c059a1-94e4-4aa7-87b5-ab155c2bf072",
+            "SignatureListSize": 870,
+            "SignatureHeaderSize": 0,
+            "SignatureSize": 842,
+            "Keys": [
+              {
+                "SignatureOwner": "a0baa8a3-041d-48a8-bc87-c36d121b5e3d",
+                "SignatureData": "308203363082021e02090094cbaf49cd56a7d8300d06092a864886f70d01010b0500305d312d302b06035504030c245562756e7475204f564d462053656375726520426f6f742028504b2f4b454b206b657929312c302a06092a864886f70d010901161d7562756e74752d646576656c406c697374732e7562756e74752e636f6d301e170d3138303632303231343834365a170d3238303631373231343834365a305d312d302b06035504030c245562756e7475204f564d462053656375726520426f6f742028504b2f4b454b206b657929312c302a06092a864886f70d010901161d7562756e74752d646576656c406c697374732e7562756e74752e636f6d30820122300d06092a864886f70d01010105000382010f003082010a0282010100cbb02be9779e5e71e9e6eb1d855286cffb8cf00a7934ccbb83109536cda0e66f55084e71e76390135a3cf75deb74c1c581409c985404b97d856fc6079167f62b53d328791bae1708169fcb7ac92c5f0bf7d54351812ebc1f9addba18013093a159ce0dbf21d0898e44117cb202999bae42265810f7760665b8cb78f9ee6b0854d84547d871722d91168dddc93f1b2d9731a3f898b0bc44dd157fdf1db9eb5be7cb08b1272cb67f60fa3a59ed26b554c4a875a6e86e565086e9ccfcce386a6208a1dd23e545b17ef0d5305d3210aa9f17292e7ecd457104830f8e43982738b47d913288f8c464bb1f690c6679bfd54c70f662da26531d177d6eb88818e2ff7e8d0203010001300d06092a864886f70d01010b0500038201010018b02d52cedf9dfe68294ec4efec2852b1cfd37597030853348f5e4eced82cf8300b6a860069337546546f3738cd2e12688b484e56187967d9f4fbcf84f1b221939eb8132851e0649ec0b675a4555f5d5a01c80e9d0871303d168d2446e67439ad7459fcdc18bdcb4947cd65e359034e836a8c1223277153873cfc847c8cbff0c2877721fd7d878fb89bfb520f7e81c593e983ffa7becb8eb01d64b9bb406897dc385413306b71589e21602ab0269e88aea366ebe5f05b807ffbdf6ea527b41bfc7e2604b2b3fdcde2c383c5f8a431b29734e2d25dbd0fa90c4b535225d5134cdc062a7610980f54ad2cccee47ea0b576dfca84ea0ebd4329a0f8c7d243df229"
+              }
+            ]
+          },
+          {
+            "SignatureType": "a5c059a1-94e4-4aa7-87b5-ab155c2bf072",
+            "SignatureListSize": 1560,
+            "SignatureHeaderSize": 0,
+            "SignatureSize": 1532,
+            "Keys": [
+              {
+                "SignatureOwner": "77fa9abd-0359-4d32-bd60-28f4e78f784b",
+                "SignatureData": "308205e8308203d0a003020102020a610ad188000000000003300d06092a864886f70d01010b0500308191310b3009060355040613025553311330110603550408130a57617368696e67746f6e3110300e060355040713075265646d6f6e64311e301c060355040a13154d6963726f736f667420436f72706f726174696f6e313b3039060355040313324d6963726f736f667420436f72706f726174696f6e205468697264205061727479204d61726b6574706c61636520526f6f74301e170d3131303632343230343132395a170d3236303632343230353132395a308180310b3009060355040613025553311330110603550408130a57617368696e67746f6e3110300e060355040713075265646d6f6e64311e301c060355040a13154d6963726f736f667420436f72706f726174696f6e312a3028060355040313214d6963726f736f667420436f72706f726174696f6e204b454b204341203230313130820122300d06092a864886f70d01010105000382010f003082010a0282010100c4e8b58abfad5726b026c3eae7fb577a44025d070dda4ae5742ae6b00fec6debec7fb9e35a63327c11174f0ee30ba73815938ec6f5e084b19a9b2ce7f5b791d609e1e2c004a8ac301cdf48f306509a64a7517fc8854f8f2086cefe2fe19fff82c0ede9cdcef4536a623a0b43b9e225fdfe05f9d4c414ab11e223898d70b7a41d4decaee59cfa16c2d7c1cbd4e8c42fe599ee248b03ec8df28beac34afb4311120b7eb547926cdce60489ebf53304eb10012a71e5f983133cff25092f687646ffba4fbedcad712a58aafb0ed2793de49b653bcc292a9ffc7259a2ebae92eff6351380c602ece45fcc9d76cdef6392c1af79408479877fe352a8e89d7b07698f150203010001a382014f3082014b301006092b06010401823715010403020100301d0603551d0e0416041462fc43cda03ea4cb6712d25bd955ac7bccb68a5f301906092b0601040182371402040c1e0a00530075006200430041300b0603551d0f040403020186300f0603551d130101ff040530030101ff301f0603551d2304183016801445665243e17e5811bfd64e9e2355083b3a226aa8305c0603551d1f045530533051a04fa04d864b687474703a2f2f63726c2e6d6963726f736f66742e636f6d2f706b692f63726c2f70726f64756374732f4d6963436f725468695061724d6172526f6f5f323031302d31302d30352e63726c306006082b0601050507010104543052305006082b060105050730028644687474703a2f2f7777772e6d6963726f736f66742e636f6d2f706b692f63657274732f4d6963436f725468695061724d6172526f6f5f323031302d31302d30352e637274300d06092a864886f70d01010b05000382020100d48488f514941802ca2a3cfb2a921c0cd7a0d1f1e85266a8eea2b5757a9000aa2da4765aea79b7b9376a517b1064f6e164f20267bef7a81b78bdbace8858640cd657c819a35f05d6dbc6d069ce484b32b7eb5dd230f5c0f5b8ba7807a32bfe9bdb345684ec82caae4125709c6be9fe900fd7961fe5e7941fb22a0c8d4bff2829107bf7d77ca5d176b905c879ed0f90929cc2fedf6f7e6c0f7bd4c145dd345196390fe55e56d8180596f407a642b3a077fd0819f27156cc9f8623a487cba6fd587ed4696715917e81f27f13e50d8b8a3c8784ebe3cebd43e5ad2d84938e6a2b5a7c44fa52aa81c82d1cbbe052df0011f89a3dc160b0e133b5a388d165190a1ae7ac7ca4c182874e38b12f0dc514876ffd8d2ebc39b6e7e6c3e0e4cd2784ef9442ef298b9046413b811b67d8f9435965cb0dbcfd00924ff4753ba7a924fc50414079e02d4f0a6a27766e52ed96697baf0ff78705d045c2ad5314811ffb3004aa373661da4a691b34d868edd602cf6c940cd3cf6c2279adb1f0bc03a24660a9c407c22182f1fdf2e8793260bfd8aca522144bcac1d84beb7d3f5735b2e64f75b4b060032253ae91791dd69b411f15865470b2de0d350f7cb03472ba97603bf079eba2b21c5da216b887c5e91bf6b597256f389fe391fa8a7998c3690eb7a31c200597f8ca14ae00d7c4f3c01410756b34a01bb59960f35cb0c5574e36d23284bf9e"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "EventNum": 7,
+      "PCRIndex": 7,
+      "EventType": "EV_EFI_VARIABLE_DRIVER_CONFIG",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "a233adbc63e3fdc5f73693a3cc4a27041714383f"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "644aacf6f4015125233c459bc9e40f3fc82ccd14abb047dc50b7913c8095d1d7"
+        }
+      ],
+      "EventSize": 3179,
+      "Event": {
+        "VariableName": "d719b2cb-3d3a-4596-a3bc-dad00e67656f",
+        "UnicodeNameLength": 2,
+        "VariableDataLength": 3143,
+        "UnicodeName": "db",
+        "VariableData": [
+          {
+            "SignatureType": "a5c059a1-94e4-4aa7-87b5-ab155c2bf072",
+            "SignatureListSize": 1543,
+            "SignatureHeaderSize": 0,
+            "SignatureSize": 1515,
+            "Keys": [
+              {
+                "SignatureOwner": "77fa9abd-0359-4d32-bd60-28f4e78f784b",
+                "SignatureData": "308205d7308203bfa003020102020a61077656000000000008300d06092a864886f70d01010b0500308188310b3009060355040613025553311330110603550408130a57617368696e67746f6e3110300e060355040713075265646d6f6e64311e301c060355040a13154d6963726f736f667420436f72706f726174696f6e31323030060355040313294d6963726f736f667420526f6f7420436572746966696361746520417574686f726974792032303130301e170d3131313031393138343134325a170d3236313031393138353134325a308184310b3009060355040613025553311330110603550408130a57617368696e67746f6e3110300e060355040713075265646d6f6e64311e301c060355040a13154d6963726f736f667420436f72706f726174696f6e312e302c060355040313254d6963726f736f66742057696e646f77732050726f64756374696f6e20504341203230313130820122300d06092a864886f70d01010105000382010f003082010a0282010100dd0cbba2e42e09e3e7c5f79669bc0021bd693333efad04cb5480ee0683bbc52084d9f7d28bf338b0aba4ad2d7c627905ffe34a3f04352070e3c4e76be09cc03675e98a31dd8d70e5dc37b5744696285b8760232cbfdc47a567f751279e72eb07a6c9b91e3b53357ce5d3ec27b9871cfeb9c923096fa84691c16e963c41d3cba33f5d026a4dec691f25285c36fffd43150a94e019b4cfdfc212e2c25b27ee2778308b5b2a096b22895360162cc0681d53baec49f39d618c85680973445d7da2542bdd79f715cf355d6c1c2b5ccebc9c238b6f6eb526d93613c34fd627aeb9323b41922ce1c7cd77e8aa544ef75c0b048765b44318a8b2e06d1977ec5a24fa48030203010001a38201433082013f301006092b06010401823715010403020100301d0603551d0e04160414a92902398e16c49778cd90f99e4f9ae17c55af53301906092b0601040182371402040c1e0a00530075006200430041300b0603551d0f040403020186300f0603551d130101ff040530030101ff301f0603551d23041830168014d5f656cb8fe8a25c6268d13d94905bd7ce9a18c430560603551d1f044f304d304ba049a0478645687474703a2f2f63726c2e6d6963726f736f66742e636f6d2f706b692f63726c2f70726f64756374732f4d6963526f6f4365724175745f323031302d30362d32332e63726c305a06082b06010505070101044e304c304a06082b06010505073002863e687474703a2f2f7777772e6d6963726f736f66742e636f6d2f706b692f63657274732f4d6963526f6f4365724175745f323031302d30362d32332e637274300d06092a864886f70d01010b0500038202010014fc7c7151a579c26eb2ef393ebc3c520f6e2b3f101373fea868d048a6344d8a960526ee3146906179d6ff382e456bf4c0e528b8da1d8f8adb09d71ac74c0a36666a8cec1bd70490a81817a49bb9e240323676c4c15ac6bfe404c0ea16d3acc368ef62acdd546c503058a6eb7cfe94a74e8ef4ec7c867357c2522173345af3a38a56c804da0709edf88be3cef47e8eaef0f60b8a08fb3fc91d727f53b8ebbe63e0e33d3165b081e5f2accd16a49f3da8b19bc242d090845f541dff89eaba1d47906fb0734e419f409f5fe5a12ab21191738a2128f0cede73395f3eab5c60ecdf0310a8d309e9f4f69685b67f51886647198da2b0123d812a680577bb914c627bb6c107c7ba7a8734030e4b627a99e9cafcce4a37c92da4577c1cfe3ddcb80f5afad6c4b30285023aeab3d96ee4692137de81d1f675190567d393575e291b39c8ee2de1cde445735bd0d2ce7aab1619824658d05e9d81b367af6c35f2bce53f24e235a20a7506f6185699d4782cd1051bebd088019daa10f105dfba7e2c63b7069b2321c4f9786ce2581706362b911203cca4d9f22dbaf9949d40ed1845f1ce8a5c6b3eab03d370182a0a6ae05f47d1d5630a32f2afd7361f2a705ae5425908714b57ba7e8381f0213cf41cc1c5b990930e88459386e9b12099be98cbc595a45d62d6a0630820bd7510777d3df345b99f979fcb57806f33a904cf77a4621c597e"
+              }
+            ]
+          },
+          {
+            "SignatureType": "a5c059a1-94e4-4aa7-87b5-ab155c2bf072",
+            "SignatureListSize": 1600,
+            "SignatureHeaderSize": 0,
+            "SignatureSize": 1572,
+            "Keys": [
+              {
+                "SignatureOwner": "77fa9abd-0359-4d32-bd60-28f4e78f784b",
+                "SignatureData": "30820610308203f8a003020102020a6108d3c4000000000004300d06092a864886f70d01010b0500308191310b3009060355040613025553311330110603550408130a57617368696e67746f6e3110300e060355040713075265646d6f6e64311e301c060355040a13154d6963726f736f667420436f72706f726174696f6e313b3039060355040313324d6963726f736f667420436f72706f726174696f6e205468697264205061727479204d61726b6574706c61636520526f6f74301e170d3131303632373231323234355a170d3236303632373231333234355a308181310b3009060355040613025553311330110603550408130a57617368696e67746f6e3110300e060355040713075265646d6f6e64311e301c060355040a13154d6963726f736f667420436f72706f726174696f6e312b3029060355040313224d6963726f736f667420436f72706f726174696f6e2055454649204341203230313130820122300d06092a864886f70d01010105000382010f003082010a0282010100a5086c4cc745096a4b0ca4c0877f06750c43015464e0167f07ed927d0bb273bf0c0ac64a4561a0c5162d96d3f52ba0fb4d499b4180903cb954fde6bcd19dc4a4188a7f418a5c59836832bb8c47c9ee71bc214f9a8a7cff443f8d8f32b22648ae75b5eec94c1e4a197ee4829a1d78774d0cb0bdf60fd316d3bcfa2ba551385df5fbbadb7802dbffec0a1b96d583b81913e9b6c07b407be11f2827c9faef565e1ce67e947ec0f044b27939e5dab2628b4dbf3870e2682414c933a40837d558695ed37cedc1045308e74eb02a876308616f631559eab22b79d70c61678a5bfd5ead877fba86674f71581222042222ce8bef547100ce503558769508ee6ab1a201d50203010001a382017630820172301206092b060104018237150104050203010001302306092b060104018237150204160414f8c16bb77f77534af325371d4ea1267b0f207080301d0603551d0e0416041413adbf4309bd82709c8cd54f316ed522988a1bd4301906092b0601040182371402040c1e0a00530075006200430041300b0603551d0f040403020186300f0603551d130101ff040530030101ff301f0603551d2304183016801445665243e17e5811bfd64e9e2355083b3a226aa8305c0603551d1f045530533051a04fa04d864b687474703a2f2f63726c2e6d6963726f736f66742e636f6d2f706b692f63726c2f70726f64756374732f4d6963436f725468695061724d6172526f6f5f323031302d31302d30352e63726c306006082b0601050507010104543052305006082b060105050730028644687474703a2f2f7777772e6d6963726f736f66742e636f6d2f706b692f63657274732f4d6963436f725468695061724d6172526f6f5f323031302d31302d30352e637274300d06092a864886f70d01010b05000382020100350842ff30cccef7760cad1068583529463276277cef124127421b4aaa6d813848591355f3e95834a6160b82aa5dad82da808341068fb41df203b9f31a5d1bf15090f9b3558442281c20bdb2ae5114c5c0ac9795211c90db0ffc779e95739188cabdbd52b905500ddf579ea061ed0de56d25d9400f1740c8cea34ac24daf9a121d08548fbdc7bcb92b3d492b1f32fc6a21694f9bc87e4234fc3606178b8f2040c0b39a257527cdc903a3f65dd1e736547ab950b5d312d107bfbb74dfdc1e8f80d5ed18f42f14166b2fde668cb023e5c784d8edeac13382ad564b182df1689507cdcff072f0aebbdd8685982c214c332bf00f4af06887b592553275a16a826a3ca32511a4edadd704aecbd84059a084d1954c6291221a741d8c3d470e44a6e4b09b3435b1fab653a82c81eca40571c89db8bae81b4466e447540e8e567fb39f1698b286d0683e9023b52f5e8f50858dc68d825f41a1f42e0de099d26c75e4b669b52186fa07d1f6e24dd1daad2c77531e253237c76c52729586b0f135616a19f5b23b815056a6322dfea289f94286271855a182ca5a9bf830985414a64796252fc826e441941a5c023fe596e3855b3c3e3fbb47167255e22522b1d97be703062aa3f71e9046c3000dd61989e30e352762037115a6efd027a0a0593760f83894b8e07870f8ba4c868794f6e0ae0245ee65c2b6a37e69167507929bf5a6bc598358"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "EventNum": 8,
+      "PCRIndex": 7,
+      "EventType": "EV_EFI_VARIABLE_DRIVER_CONFIG",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "0aedaad2554e295446e5e92c3b900e01f028f2dc"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "1963d580fcc0cede165e23837b55335eebe18750c0b795883386026ea071e3c6"
+        }
+      ],
+      "EventSize": 114,
+      "Event": {
+        "VariableName": "d719b2cb-3d3a-4596-a3bc-dad00e67656f",
+        "UnicodeNameLength": 3,
+        "VariableDataLength": 76,
+        "UnicodeName": "dbx",
+        "VariableData": [
+          {
+            "SignatureType": "c1c41626-504c-4092-aca9-41f936934328",
+            "SignatureListSize": 76,
+            "SignatureHeaderSize": 0,
+            "SignatureSize": 48,
+            "Keys": [
+              {
+                "SignatureOwner": "a0baa8a3-041d-48a8-bc87-c36d121b5e3d",
+                "SignatureData": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "EventNum": 9,
+      "PCRIndex": 7,
+      "EventType": "EV_SEPARATOR",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
+      "EventSize": 4,
+      "Event": "00000000"
+    },
+    {
+      "EventNum": 10,
+      "PCRIndex": 2,
+      "EventType": "EV_EFI_BOOT_SERVICES_DRIVER",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "94f73ca3598b5b7fff3b295b5788cbbfcd27a10c"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "2b37dc2f75e2db4099e0dd546e6bbb05d1be905f8cd449baafc86353bda5dd54"
+        }
+      ],
+      "EventSize": 90,
+      "Event": {
+        "ImageLocationInMemory": 2112069656,
+        "ImageLengthInMemory": 205768,
+        "ImageLinkTimeAddress": 0,
+        "LengthOfDevicePath": 58,
+        "DevicePath": "02010c00d041030a000000000101060000020101060000000101060000010408180000000000005c010000000000ff7f0400000000007fff0400"
+      }
+    },
+    {
+      "EventNum": 11,
+      "PCRIndex": 2,
+      "EventType": "EV_EFI_BOOT_SERVICES_DRIVER",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "94f73ca3598b5b7fff3b295b5788cbbfcd27a10c"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "2b37dc2f75e2db4099e0dd546e6bbb05d1be905f8cd449baafc86353bda5dd54"
+        }
+      ],
+      "EventSize": 90,
+      "Event": {
+        "ImageLocationInMemory": 2112069656,
+        "ImageLengthInMemory": 205768,
+        "ImageLinkTimeAddress": 0,
+        "LengthOfDevicePath": 58,
+        "DevicePath": "02010c00d041030a000000000101060000020101060000000101060000020408180000000000005c010000000000ff7f0400000000007fff0400"
+      }
+    },
+    {
+      "EventNum": 12,
+      "PCRIndex": 2,
+      "EventType": "EV_EFI_BOOT_SERVICES_DRIVER",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "94f73ca3598b5b7fff3b295b5788cbbfcd27a10c"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "2b37dc2f75e2db4099e0dd546e6bbb05d1be905f8cd449baafc86353bda5dd54"
+        }
+      ],
+      "EventSize": 90,
+      "Event": {
+        "ImageLocationInMemory": 2112069656,
+        "ImageLengthInMemory": 205768,
+        "ImageLinkTimeAddress": 0,
+        "LengthOfDevicePath": 58,
+        "DevicePath": "02010c00d041030a000000000101060000020101060000000101060000030408180000000000005c010000000000ff7f0400000000007fff0400"
+      }
+    },
+    {
+      "EventNum": 13,
+      "PCRIndex": 1,
+      "EventType": "EV_EFI_VARIABLE_BOOT",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "adee6c5e9bf908efbea8d9e7a56f2a797494fb78"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "723b01e8b120f1d1b870872e81c7bb9cd6b04fd9320bb9c78ad4f69809876f7a"
+        }
+      ],
+      "EventSize": 58,
+      "Event": {
+        "VariableName": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "UnicodeNameLength": 9,
+        "VariableDataLength": 8,
+        "UnicodeName": "BootOrder",
+        "VariableData": [
+          "Boot0003",
+          "Boot0001",
+          "Boot0000",
+          "Boot0002"
+        ]
+      }
+    },
+    {
+      "EventNum": 14,
+      "PCRIndex": 1,
+      "EventType": "EV_EFI_VARIABLE_BOOT",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "c3cc43b53de745b1e761d2d326d123801047cf6e"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "6ec79c178a8d1f946096c307e29d0818bc123435e36933c6f92ef8491d7dc1fc"
+        }
+      ],
+      "EventSize": 166,
+      "Event": {
+        "VariableName": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "UnicodeNameLength": 8,
+        "VariableDataLength": 118,
+        "UnicodeName": "Boot0003",
+        "VariableData": {
+          "Enabled": "Yes",
+          "FilePathListLength": 98,
+          "Description": "ubuntu",
+          "DevicePath": "04012a000f00000000280000000000000050030000000000722f016208e69d42bed9ddeed57b8a2c0202040434005c004500460049005c007500620075006e00740075005c007300680069006d007800360034002e0065006600690000007fff0400"
+        }
+      }
+    },
+    {
+      "EventNum": 15,
+      "PCRIndex": 1,
+      "EventType": "EV_EFI_VARIABLE_BOOT",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "78e6be385805ec676e28de10fee56b00889d409f"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "805699bf937dc1b6dcd72f6e5d15a8dc070b027afbcd5033bbe54780a4db5a73"
+        }
+      ],
+      "EventSize": 132,
+      "Event": {
+        "VariableName": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "UnicodeNameLength": 8,
+        "VariableDataLength": 84,
+        "UnicodeName": "Boot0001",
+        "VariableData": {
+          "Enabled": "Yes",
+          "FilePathListLength": 28,
+          "Description": "UEFI Misc Device",
+          "DevicePath": "02010c00d041030a000000000101060001020101060000007fff04004eac0881119f594d850ee21a522c59b2"
+        }
+      }
+    },
+    {
+      "EventNum": 16,
+      "PCRIndex": 1,
+      "EventType": "EV_EFI_VARIABLE_BOOT",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "22a4f6ee9af6dba01d3528deb64b74b582fc182b"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "3197be1e300fa1600d1884c3a4bd4a90a15405bfb546cf2e6cf6095f8c362a93"
+        }
+      ],
+      "EventSize": 110,
+      "Event": {
+        "VariableName": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "UnicodeNameLength": 8,
+        "VariableDataLength": 62,
+        "UnicodeName": "Boot0000",
+        "VariableData": {
+          "Enabled": "Yes",
+          "FilePathListLength": 44,
+          "Description": "UiApp",
+          "DevicePath": "04071400c9bdb87cebf8344faaea3ee4af6516a10406140021aa2c4614760345836e8ab6f46623317fff0400"
+        }
+      }
+    },
+    {
+      "EventNum": 17,
+      "PCRIndex": 1,
+      "EventType": "EV_EFI_VARIABLE_BOOT",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "df5d6605cb8f4366d745a8464cfb26c1efdc305c"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "4d387b02d63b2f4cd7f667feb0a387fe47a10a3e26bf3533ddd001c605f3dec5"
+        }
+      ],
+      "EventSize": 136,
+      "Event": {
+        "VariableName": "8be4df61-93ca-11d2-aa0d-00e098032b8c",
+        "UnicodeNameLength": 8,
+        "VariableDataLength": 88,
+        "UnicodeName": "Boot0002",
+        "VariableData": {
+          "Enabled": "Yes",
+          "FilePathListLength": 44,
+          "Description": "EFI Internal Shell",
+          "DevicePath": "04071400c9bdb87cebf8344faaea3ee4af6516a10406140083a5047c3e9e1c4fad65e05268d0b4d17fff0400"
+        }
+      }
+    },
+    {
+      "EventNum": 18,
+      "PCRIndex": 4,
+      "EventType": "EV_EFI_ACTION",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "cd0fdb4531a6ec41be2753ba042637d6e5f7f256"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "3d6772b4f84ed47595d72a2c4c5ffd15f5bb72c7507fe26f2aaee2c69d5633ba"
+        }
+      ],
+      "EventSize": 40,
+      "Event": "Calling EFI Application from Boot Option"
+    },
+    {
+      "EventNum": 19,
+      "PCRIndex": 0,
+      "EventType": "EV_SEPARATOR",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
+      "EventSize": 4,
+      "Event": "00000000"
+    },
+    {
+      "EventNum": 20,
+      "PCRIndex": 1,
+      "EventType": "EV_SEPARATOR",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
+      "EventSize": 4,
+      "Event": "00000000"
+    },
+    {
+      "EventNum": 21,
+      "PCRIndex": 2,
+      "EventType": "EV_SEPARATOR",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
+      "EventSize": 4,
+      "Event": "00000000"
+    },
+    {
+      "EventNum": 22,
+      "PCRIndex": 3,
+      "EventType": "EV_SEPARATOR",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
+      "EventSize": 4,
+      "Event": "00000000"
+    },
+    {
+      "EventNum": 23,
+      "PCRIndex": 4,
+      "EventType": "EV_SEPARATOR",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
+      "EventSize": 4,
+      "Event": "00000000"
+    },
+    {
+      "EventNum": 24,
+      "PCRIndex": 5,
+      "EventType": "EV_SEPARATOR",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
+      "EventSize": 4,
+      "Event": "00000000"
+    },
+    {
+      "EventNum": 25,
+      "PCRIndex": 6,
+      "EventType": "EV_SEPARATOR",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "9069ca78e7450a285173431b3e52c5c25299e473"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+        }
+      ],
+      "EventSize": 4,
+      "Event": "00000000"
+    },
+    {
+      "EventNum": 26,
+      "PCRIndex": 7,
+      "EventType": "EV_EFI_VARIABLE_AUTHORITY",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "8b5866854c0b829dd967a1d9f100a3920d412792"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "4d4a8e2c74133bbdc01a16eaf2dbb5d575afeb36f5d8dfcf609ae043909e2ee9"
+        }
+      ],
+      "EventSize": 1608,
+      "Event": {
+        "VariableName": "d719b2cb-3d3a-4596-a3bc-dad00e67656f",
+        "UnicodeNameLength": 2,
+        "VariableDataLength": 1572,
+        "UnicodeName": "db",
+        "VariableData": [
+          {
+            "SignatureOwner": "77fa9abd-0359-4d32-bd60-28f4e78f784b",
+            "SignatureData": "30820610308203f8a003020102020a6108d3c4000000000004300d06092a864886f70d01010b0500308191310b3009060355040613025553311330110603550408130a57617368696e67746f6e3110300e060355040713075265646d6f6e64311e301c060355040a13154d6963726f736f667420436f72706f726174696f6e313b3039060355040313324d6963726f736f667420436f72706f726174696f6e205468697264205061727479204d61726b6574706c61636520526f6f74301e170d3131303632373231323234355a170d3236303632373231333234355a308181310b3009060355040613025553311330110603550408130a57617368696e67746f6e3110300e060355040713075265646d6f6e64311e301c060355040a13154d6963726f736f667420436f72706f726174696f6e312b3029060355040313224d6963726f736f667420436f72706f726174696f6e2055454649204341203230313130820122300d06092a864886f70d01010105000382010f003082010a0282010100a5086c4cc745096a4b0ca4c0877f06750c43015464e0167f07ed927d0bb273bf0c0ac64a4561a0c5162d96d3f52ba0fb4d499b4180903cb954fde6bcd19dc4a4188a7f418a5c59836832bb8c47c9ee71bc214f9a8a7cff443f8d8f32b22648ae75b5eec94c1e4a197ee4829a1d78774d0cb0bdf60fd316d3bcfa2ba551385df5fbbadb7802dbffec0a1b96d583b81913e9b6c07b407be11f2827c9faef565e1ce67e947ec0f044b27939e5dab2628b4dbf3870e2682414c933a40837d558695ed37cedc1045308e74eb02a876308616f631559eab22b79d70c61678a5bfd5ead877fba86674f71581222042222ce8bef547100ce503558769508ee6ab1a201d50203010001a382017630820172301206092b060104018237150104050203010001302306092b060104018237150204160414f8c16bb77f77534af325371d4ea1267b0f207080301d0603551d0e0416041413adbf4309bd82709c8cd54f316ed522988a1bd4301906092b0601040182371402040c1e0a00530075006200430041300b0603551d0f040403020186300f0603551d130101ff040530030101ff301f0603551d2304183016801445665243e17e5811bfd64e9e2355083b3a226aa8305c0603551d1f045530533051a04fa04d864b687474703a2f2f63726c2e6d6963726f736f66742e636f6d2f706b692f63726c2f70726f64756374732f4d6963436f725468695061724d6172526f6f5f323031302d31302d30352e63726c306006082b0601050507010104543052305006082b060105050730028644687474703a2f2f7777772e6d6963726f736f66742e636f6d2f706b692f63657274732f4d6963436f725468695061724d6172526f6f5f323031302d31302d30352e637274300d06092a864886f70d01010b05000382020100350842ff30cccef7760cad1068583529463276277cef124127421b4aaa6d813848591355f3e95834a6160b82aa5dad82da808341068fb41df203b9f31a5d1bf15090f9b3558442281c20bdb2ae5114c5c0ac9795211c90db0ffc779e95739188cabdbd52b905500ddf579ea061ed0de56d25d9400f1740c8cea34ac24daf9a121d08548fbdc7bcb92b3d492b1f32fc6a21694f9bc87e4234fc3606178b8f2040c0b39a257527cdc903a3f65dd1e736547ab950b5d312d107bfbb74dfdc1e8f80d5ed18f42f14166b2fde668cb023e5c784d8edeac13382ad564b182df1689507cdcff072f0aebbdd8685982c214c332bf00f4af06887b592553275a16a826a3ca32511a4edadd704aecbd84059a084d1954c6291221a741d8c3d470e44a6e4b09b3435b1fab653a82c81eca40571c89db8bae81b4466e447540e8e567fb39f1698b286d0683e9023b52f5e8f50858dc68d825f41a1f42e0de099d26c75e4b669b52186fa07d1f6e24dd1daad2c77531e253237c76c52729586b0f135616a19f5b23b815056a6322dfea289f94286271855a182ca5a9bf830985414a64796252fc826e441941a5c023fe596e3855b3c3e3fbb47167255e22522b1d97be703062aa3f71e9046c3000dd61989e30e352762037115a6efd027a0a0593760f83894b8e07870f8ba4c868794f6e0ae0245ee65c2b6a37e69167507929bf5a6bc598358"
+          }
+        ]
+      }
+    },
+    {
+      "EventNum": 27,
+      "PCRIndex": 5,
+      "EventType": "EV_EFI_GPT_EVENT",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "e6d7b9c9fa2bf0d0c6e8607ecd365fdfadcd6191"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "7e87e1e173ee118ebb7bee9f137b5e4c8ddabfcdccf06914454a8a0e12b04543"
+        }
+      ],
+      "EventSize": 484,
+      "Event": {
+        "Header": {
+          "Signature": "EFI PART",
+          "Revision": 65536,
+          "HeaderSize": 92,
+          "HeaderCRC32": 2759635260,
+          "MyLBA": 1,
+          "AlternateLBA": 52846591,
+          "FirstUsableLBA": 34,
+          "LastUsableLBA": 52846558,
+          "DiskGUID": "b2268c74-04cf-4b37-a8c8-c64519d4e95e",
+          "PartitionEntryLBA": 2,
+          "NumberOfPartitionEntry": 128,
+          "SizeOfPartitionEntry": 128,
+          "PartitionEntryArrayCRC32": 2600818660
+        },
+        "NumberOfPartitions": 3,
+        "Partitions": [
+          {
+            "PartitionTypeGUID": "0fc63daf-8483-4772-8e79-3d69d8477de4",
+            "UniquePartitionGUID": "5dc4ae1f-8999-44a6-8d3b-1bd31dc2aee5",
+            "StartingLBA": 227328,
+            "EndingLBA": 52846558,
+            "Attributes": 0,
+            "PartitionName": ""
+          },
+          {
+            "PartitionTypeGUID": "21686148-6449-6e6f-744e-656564454649",
+            "UniquePartitionGUID": "12890cd5-794b-4e54-97ba-909eb85cd357",
+            "StartingLBA": 2048,
+            "EndingLBA": 10239,
+            "Attributes": 0,
+            "PartitionName": ""
+          },
+          {
+            "PartitionTypeGUID": "c12a7328-f81f-11d2-ba4b-00a0c93ec93b",
+            "UniquePartitionGUID": "62012f72-e608-429d-bed9-ddeed57b8a2c",
+            "StartingLBA": 10240,
+            "EndingLBA": 227327,
+            "Attributes": 0,
+            "PartitionName": ""
+          }
+        ]
+      }
+    },
+    {
+      "EventNum": 28,
+      "PCRIndex": 4,
+      "EventType": "EV_EFI_BOOT_SERVICES_APPLICATION",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "919d6b42ce45cd1f98f890c855f0ae2cb8ef9bda"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "0f87dfd530645c0e0197b89938f0659c943e5eceffec74f09fefa135f4ee76e6"
+        }
+      ],
+      "EventSize": 154,
+      "Event": {
+        "ImageLocationInMemory": 2096168984,
+        "ImageLengthInMemory": 954592,
+        "ImageLinkTimeAddress": 0,
+        "LengthOfDevicePath": 122,
+        "DevicePath": "02010c00d041030a0000000001010600010201010600000004012a000f00000000280000000000000050030000000000722f016208e69d42bed9ddeed57b8a2c0202040434005c004500460049005c007500620075006e00740075005c007300680069006d007800360034002e0065006600690000007fff0400"
+      }
+    },
+    {
+      "EventNum": 29,
+      "PCRIndex": 14,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "d4e0d767c83daf33a3c27e60027accab5c378bcb"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "ae320288c88b8b050b1b16163565c264719e623e709c7789d2c12ba9a00bc4ee"
+        }
+      ],
+      "EventSize": 8,
+      "Event": {
+        "String": "MokList"
+      }
+    },
+    {
+      "EventNum": 30,
+      "PCRIndex": 14,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "525ff70d4cfa4b2c76a2e23fc4490797932bd3f2"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "8d8a3aae50d5d25838c95c034aadce7b548c9a952eb7925e366eda537c59c3b0"
+        }
+      ],
+      "EventSize": 9,
+      "Event": {
+        "String": "MokListX"
+      }
+    },
+    {
+      "EventNum": 31,
+      "PCRIndex": 7,
+      "EventType": "EV_EFI_VARIABLE_AUTHORITY",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "15875d39b8872f8aff3a92fc9f9e40ac75268e04"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "922e939a5565798a5ef12fe09d8b49bf951a8e7f89a0cca7a51636693d41a34d"
+        }
+      ],
+      "EventSize": 68,
+      "Event": {
+        "VariableName": "605dab50-e046-4300-abb6-3dd810dd8b23",
+        "UnicodeNameLength": 9,
+        "VariableDataLength": 18,
+        "UnicodeName": "SbatLevel",
+        "VariableData": {
+          "String": "sbat,1,2021030218"
+        }
+      }
+    },
+    {
+      "EventNum": 32,
+      "PCRIndex": 4,
+      "EventType": "EV_EFI_BOOT_SERVICES_APPLICATION",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "6c79a414b877a5bde5e3b0e91de0830dbc5ce879"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "412ce775fe05b194ce64441443aa721ad8b7dedb8e4f5e40481633d596d5b842"
+        }
+      ],
+      "EventSize": 88,
+      "Event": {
+        "ImageLocationInMemory": 2093486104,
+        "ImageLengthInMemory": 1734528,
+        "ImageLinkTimeAddress": 0,
+        "LengthOfDevicePath": 56,
+        "DevicePath": "040434005c004500460049005c007500620075006e00740075005c0067007200750062007800360034002e0065006600690000007fff0400"
+      }
+    },
+    {
+      "EventNum": 33,
+      "PCRIndex": 7,
+      "EventType": "EV_EFI_VARIABLE_AUTHORITY",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "e50033c9db382a1fa2788f7ebe521fdcc87cc34a"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "5e19450c7a75acd95f6af49d0e32b74142972d9dd4c1b8068450653683a13016"
+        }
+      ],
+      "EventSize": 1120,
+      "Event": {
+        "VariableName": "605dab50-e046-4300-abb6-3dd810dd8b23",
+        "UnicodeNameLength": 4,
+        "VariableDataLength": 1080,
+        "UnicodeName": "Shim",
+        "VariableData": [
+          {
+            "SignatureOwner": "34048230-8230-1c03-a003-020102020900",
+            "SignatureData": "b94124a0182c9267300d06092a864886f70d01010b0500308184310b30090603550406130247423114301206035504080c0b49736c65206f66204d616e3110300e06035504070c07446f75676c617331173015060355040a0c0e43616e6f6e6963616c204c74642e3134303206035504030c2b43616e6f6e6963616c204c74642e204d617374657220436572746966696361746520417574686f72697479301e170d3132303431323131313235315a170d3432303431313131313235315a308184310b30090603550406130247423114301206035504080c0b49736c65206f66204d616e3110300e06035504070c07446f75676c617331173015060355040a0c0e43616e6f6e6963616c204c74642e3134303206035504030c2b43616e6f6e6963616c204c74642e204d617374657220436572746966696361746520417574686f7269747930820122300d06092a864886f70d01010105000382010f003082010a0282010100bf5b3a1674ee215dae61ed9d56acbddede72f3dd7e2d4c620facc06d480811cf8d8bfb611f27cc116ed9553d3954eb403bb1bbe2853479caf77bbfba7ac8102d197dad59cfa6d4e94e0fdaae52ea4c9e90cec6990d4e6765785df9d1d5384a4a7a8f939c7f1aa385dbcefa8bf7c2a2212d9b5441351057138d6cbc2906504a7eea99a968a73bc7071b329ea019870e79bb68992d7e9352e5f6ebc99bf92bedb86849bcd99550405bc5b271aaeb5c57de71f9400add5bac1e842d501a52d6e1f36b6e90644f5bb4eb20e46110da5af0eae442d701c4fe211fd9b9c05495428152721f49647ac86c24f108700b4da5a032d1a01c57a84de3afa58e05053e1043a10203010001a381a63081a3301d0603551d0e04160414ad91990bc22ab1f517048c23b6655a268e345a63301f0603551d23041830168014ad91990bc22ab1f517048c23b6655a268e345a63300f0603551d130101ff040530030101ff300b0603551d0f04040302018630430603551d1f043c303a3038a036a0348632687474703a2f2f7777772e63616e6f6e6963616c2e636f6d2f7365637572652d626f6f742d6d61737465722d63612e63726c300d06092a864886f70d01010b050003820101003f7df676a5b383b42b7ad06d521a0383c412a7509c4792ccc0947782d2ae57b39904f5323ac6551d07db12a956fad8d47620ebe4c351db9a5c9c923f1873da946aa199388ca4886dc1fc3971d0747616033e562335d555475b1a1d41c2d3124cdcffae0a929c620a17019c73e05eb1fdbcd6b519117a7ecd3e037e66db5ba8c9394851ff53e19c3153911b3b10750317bae681028094704c46b794b03d15cd1f8e02e068028ffbf9471d7da201c60751c49accedddcfa35ded92bbbed1fde6ec1f33517304be3c72b07d08f801ff987dcb9ce069397725477188b18d27a52ea8f73f5f8069973ea9f49914dbce030e0b66c41c6dbdb82777c14294bdfc6a0abc"
+          }
+        ]
+      }
+    },
+    {
+      "EventNum": 34,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "eb8f0933764167314aaf9a7e46e1a1f892636d77"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "06e6977a0e827dd5e26fb6cbb8053849973c7edf88f3f963e2fbf32d83d9a70f"
+        }
+      ],
+      "EventSize": 32,
+      "Event": {
+        "String": "(hd0,gpt15)/EFI/ubuntu/grub.cfg"
+      }
+    },
+    {
+      "EventNum": 35,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "2254612628a994be6d6c2e06525f1587ad4d59b4"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "7b44bad3cfa2b9375727f24f446a26cb9159d373b35d7f691498a02b9987ba77"
+        }
+      ],
+      "EventSize": 67,
+      "Event": {
+        "String": "grub_cmd: search.fs_uuid 68a3fb48-331d-433e-9ab6-f89f3b877c81 root"
+      }
+    },
+    {
+      "EventNum": 36,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "c90fdbd8bc3928f93d41ef4176a3415df2d584eb"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "679845b798116003dcee938a7e87a07c7b7dd42b5349e54632bbfa82a740541b"
+        }
+      ],
+      "EventSize": 42,
+      "Event": {
+        "String": "grub_cmd: set prefix=(hd0,gpt1)/boot/grub"
+      }
+    },
+    {
+      "EventNum": 37,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "7f7e85909fb37d150f57822c0ad3b636e7853aff"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "5137257cdcec140bce7e0c83c1000df3f7ecf18de11bde46b8d32f49ba657791"
+        }
+      ],
+      "EventSize": 44,
+      "Event": {
+        "String": "(hd0,gpt1)/boot/grub/x86_64-efi/command.lst"
+      }
+    },
+    {
+      "EventNum": 38,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "f091655c7ac7314eb0df21931415de47628d621f"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "32fc7f5de8c0a5dc0b1e7eb609ca31a77eb3475539e1d97a4543dca1b9b26c57"
+        }
+      ],
+      "EventSize": 39,
+      "Event": {
+        "String": "(hd0,gpt1)/boot/grub/x86_64-efi/fs.lst"
+      }
+    },
+    {
+      "EventNum": 39,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "ff00d28114398cf1a052329494d63aceeb8ff29a"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "1b766f38a94927fe9b7bc1e809f0363e778e14c601e800faea271a2e75d3fc43"
+        }
+      ],
+      "EventSize": 43,
+      "Event": {
+        "String": "(hd0,gpt1)/boot/grub/x86_64-efi/crypto.lst"
+      }
+    },
+    {
+      "EventNum": 40,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "66b726c6d64bc109d3948a9528f502ea94938ef4"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "46f888c52f36baf9b62d60bc8d06426a314aad5a0ff86a4362a91c2512a1df9c"
+        }
+      ],
+      "EventSize": 45,
+      "Event": {
+        "String": "(hd0,gpt1)/boot/grub/x86_64-efi/terminal.lst"
+      }
+    },
+    {
+      "EventNum": 41,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "1284bee568af2e320e6a03dce30144182be7d51e"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "874d063ee6d5776d8474fcbaed76cdd44f32572d8454338fef7138347e866d7d"
+        }
+      ],
+      "EventSize": 51,
+      "Event": {
+        "String": "grub_cmd: configfile (hd0,gpt1)/boot/grub/grub.cfg"
+      }
+    },
+    {
+      "EventNum": 42,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "0fadab0ee26292debbedd2f3baeab0b673fb5dec"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "48e524e8fca3474bcb0fecb6ea8f6218d5f73aace59a5069ee24edab5ea3ca3b"
+        }
+      ],
+      "EventSize": 30,
+      "Event": {
+        "String": "(hd0,gpt1)/boot/grub/grub.cfg"
+      }
+    },
+    {
+      "EventNum": 43,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "3e5cd7ea0fdc2e2b2f956d41f9090ee3732fb833"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "7e2b3493baa3f9e4c6a836282d1e66b5855692169dee44d46fe20d11dbc17381"
+        }
+      ],
+      "EventSize": 46,
+      "Event": {
+        "String": "grub_cmd: [ -s (hd0,gpt1)/boot/grub/grubenv ]"
+      }
+    },
+    {
+      "EventNum": 44,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "b27ebe55858f31979b645a4244b55e6efadb4dae"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "2e4234c851ddf251b0ffc935ee1db96b7befd4f2df869a5612e282de04c23fc0"
+        }
+      ],
+      "EventSize": 29,
+      "Event": {
+        "String": "(hd0,gpt1)/boot/grub/grubenv"
+      }
+    },
+    {
+      "EventNum": 45,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "3c4e9b1198ecc160aff6022c0f96b5b22fab1469"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "0e3a17e0c48e42d79f4d1576e7f787c911239510586505c326143b9b268bdd65"
+        }
+      ],
+      "EventSize": 32,
+      "Event": {
+        "String": "grub_cmd: set have_grubenv=true"
+      }
+    },
+    {
+      "EventNum": 46,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "453dee6ce82bd80ea89bd8085724ae9784ff0f1b"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "f8b99f77983990e8804864cade91f361b5b6600cc2832febaef878ac8b44d27e"
+        }
+      ],
+      "EventSize": 19,
+      "Event": {
+        "String": "grub_cmd: load_env"
+      }
+    },
+    {
+      "EventNum": 47,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "b27ebe55858f31979b645a4244b55e6efadb4dae"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "2e4234c851ddf251b0ffc935ee1db96b7befd4f2df869a5612e282de04c23fc0"
+        }
+      ],
+      "EventSize": 29,
+      "Event": {
+        "String": "(hd0,gpt1)/boot/grub/grubenv"
+      }
+    },
+    {
+      "EventNum": 48,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "b4e99b40d2dddcdf68e8aa439e18dd5ebacbffc9"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "d2b92983e66aff99982fe5af55e0f9277dc0f8879934e17b00147e1f4156179e"
+        }
+      ],
+      "EventSize": 19,
+      "Event": {
+        "String": "grub_cmd: [  = 2 ]"
+      }
+    },
+    {
+      "EventNum": 49,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "05ba452bf00b7f880528b35d02e9077f89c08538"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "82a4a14e43a4f76118ae63285d0af05af139f260fae57b2c20737a1c1df3382b"
+        }
+      ],
+      "EventSize": 19,
+      "Event": {
+        "String": "grub_cmd: [  = 1 ]"
+      }
+    },
+    {
+      "EventNum": 50,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "710cbf237c9abd071ca91c4104324800bec7b0fb"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "ce8124bc1b0fbc0cb5cd47338ca0c7d5f5446d79936e443a201d96b192a7bd65"
+        }
+      ],
+      "EventSize": 15,
+      "Event": {
+        "String": "grub_cmd: [  ]"
+      }
+    },
+    {
+      "EventNum": 51,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "75409120452bbbee30abe289af973ecdd7e0ef6b"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "3a118940bf2675007df3368cb6d45cf2756f328d3e75daf69a971dd21bd1bc58"
+        }
+      ],
+      "EventSize": 24,
+      "Event": {
+        "String": "grub_cmd: set default=0"
+      }
+    },
+    {
+      "EventNum": 52,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+        }
+      ],
+      "EventSize": 22,
+      "Event": {
+        "String": "grub_cmd: [ xy = xy ]"
+      }
+    },
+    {
+      "EventNum": 53,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "bd5209e50c09650ffcf5c2d12a8be8277e438023"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "09f17d4dfb4b97f16246632c21b1ac2125c95c148899eee5069fbb1b34365513"
+        }
+      ],
+      "EventSize": 35,
+      "Event": {
+        "String": "grub_cmd: menuentry_id_option=--id"
+      }
+    },
+    {
+      "EventNum": 54,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "6248599bae0d78ccbda185ed2fce0182ed41e297"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "4af0bb370c9e3b7982027d02e04c935e32d52b528007476bfc50d36d1b86815e"
+        }
+      ],
+      "EventSize": 37,
+      "Event": {
+        "String": "grub_cmd: export menuentry_id_option"
+      }
+    },
+    {
+      "EventNum": 55,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "710cbf237c9abd071ca91c4104324800bec7b0fb"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "ce8124bc1b0fbc0cb5cd47338ca0c7d5f5446d79936e443a201d96b192a7bd65"
+        }
+      ],
+      "EventSize": 15,
+      "Event": {
+        "String": "grub_cmd: [  ]"
+      }
+    },
+    {
+      "EventNum": 56,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "7dc272da02b00e0ee2958961bb99a2e3196ec24a"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "df24f1cae6b428fdd09bc14b06df255f93060ff05d56c3127724168596f73d5f"
+        }
+      ],
+      "EventSize": 33,
+      "Event": {
+        "String": "grub_cmd: terminal_input console"
+      }
+    },
+    {
+      "EventNum": 57,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "155e201c47f534b1201190d61e9d178a525540e6"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "fed7c930939012174a23271f9fa177a39891cd1baf6ccd22bccce96acd0514d1"
+        }
+      ],
+      "EventSize": 34,
+      "Event": {
+        "String": "grub_cmd: terminal_output console"
+      }
+    },
+    {
+      "EventNum": 58,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "05ba452bf00b7f880528b35d02e9077f89c08538"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "82a4a14e43a4f76118ae63285d0af05af139f260fae57b2c20737a1c1df3382b"
+        }
+      ],
+      "EventSize": 19,
+      "Event": {
+        "String": "grub_cmd: [  = 1 ]"
+      }
+    },
+    {
+      "EventNum": 59,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+        }
+      ],
+      "EventSize": 22,
+      "Event": {
+        "String": "grub_cmd: [ xy = xy ]"
+      }
+    },
+    {
+      "EventNum": 60,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "58795e8592d9ff3b6b39add68ddba958eff547a2"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "61caa54fc24ba8b3e79be63f375a08f374244e4ede8e0d6080060aa3fa5f7fbb"
+        }
+      ],
+      "EventSize": 35,
+      "Event": {
+        "String": "grub_cmd: set timeout_style=hidden"
+      }
+    },
+    {
+      "EventNum": 61,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "4f44a4a7a7523e637715ea96d38b3614bb6c22d8"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "d3a793f471b6bfe8d783f5e629314cad4763d48986a8cd4df25475334b40f49b"
+        }
+      ],
+      "EventSize": 24,
+      "Event": {
+        "String": "grub_cmd: set timeout=0"
+      }
+    },
+    {
+      "EventNum": 62,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "55cfd6463ef334abb6b48080b33ec063a9c051eb"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "cfa4676ffe751d1547e77a8d66a033b59b3eed3400d9b3a305d2601891ab0e59"
+        }
+      ],
+      "EventSize": 22,
+      "Event": {
+        "String": "grub_cmd: [ -n true ]"
+      }
+    },
+    {
+      "EventNum": 63,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "7a86009dc1f23867d8951bb95471618bde2d1918"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "2436afe3cb181454ab807d6ca526ed3132dc1759787f9ed3f2f148e86948e978"
+        }
+      ],
+      "EventSize": 18,
+      "Event": {
+        "String": "grub_cmd: [ -n  ]"
+      }
+    },
+    {
+      "EventNum": 64,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "5e1cea54b6044a1b5341cccdf101a5f9fbfc101b"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "681e45c7ba76e7c4bec5a79dead78461eb175b67656e03f4809aa012d275c823"
+        }
+      ],
+      "EventSize": 51,
+      "Event": {
+        "String": "grub_cmd: set initrdless_boot_fallback_triggered=0"
+      }
+    },
+    {
+      "EventNum": 65,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "eb11507f1980d7ea78190040b49c79cf3a6c6b93"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "01ffa4a5eae6be98974c1b75e839f442eed9d9f5c1d65c03d355e04fc81d2873"
+        }
+      ],
+      "EventSize": 54,
+      "Event": {
+        "String": "grub_cmd: save_env initrdless_boot_fallback_triggered"
+      }
+    },
+    {
+      "EventNum": 66,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "0d570854895a5a9ce25dc6c25026278c2d1a6367"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "207cda95fd859189d016c7c2cc03b9c05672984589e4809e1dcee665d629cf7d"
+        }
+      ],
+      "EventSize": 44,
+      "Event": {
+        "String": "grub_cmd: set menu_color_normal=white/black"
+      }
+    },
+    {
+      "EventNum": 67,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "d4a516aec1bccafec65420d98fcb243aa465d837"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "6f18799fe0ecb5c4bb4c0695a3094dc9841c940c3b463e14c25e444246348a2a"
+        }
+      ],
+      "EventSize": 52,
+      "Event": {
+        "String": "grub_cmd: set menu_color_highlight=black/light-gray"
+      }
+    },
+    {
+      "EventNum": 68,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "423287a40b914bb51497db32f9086697d1fb9e12"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "f0b4b3c23103828ea2fa05044a2cfce5efc9d15e99ffb9c61d7349c1303741af"
+        }
+      ],
+      "EventSize": 20,
+      "Event": {
+        "String": "grub_cmd: [  != 1 ]"
+      }
+    },
+    {
+      "EventNum": 69,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "292cce90d28e1736a8e914e8540d9bf0e3cb3691"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "5d884e52d0e191d8821b77c7a853a89a2d05844743c8e98187b474d800f1c7e6"
+        }
+      ],
+      "EventSize": 55,
+      "Event": {
+        "String": "grub_cmd: [ -e (hd0,gpt1)/boot/grub/gfxblacklist.txt ]"
+      }
+    },
+    {
+      "EventNum": 70,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "3c478e70547a82a4000a6941b85af79242734271"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "c08a8b76f5bc9ce36f6af0d203c7c1d54be9cee4c74c7e4d52bf7821edcca28f"
+        }
+      ],
+      "EventSize": 58,
+      "Event": {
+        "String": "grub_cmd: hwmatch (hd0,gpt1)/boot/grub/gfxblacklist.txt 3"
+      }
+    },
+    {
+      "EventNum": 71,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "6bcfa9ba9fe5adc995142ad3074b66402dc0a7a6"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "a36de0798eb0ac94d6edf367749c0ced605c5b92d74b83312f94132434f549e5"
+        }
+      ],
+      "EventSize": 18,
+      "Event": {
+        "String": "grub_cmd: [ = 0 ]"
+      }
+    },
+    {
+      "EventNum": 72,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "68977a27d93c5e2836f7c54d624dd48feec0f67d"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "f249e761a7e37510f8acf59142c117444c3aa1bc5a719ae7eab60d3b7109180a"
+        }
+      ],
+      "EventSize": 34,
+      "Event": {
+        "String": "grub_cmd: set linux_gfx_mode=keep"
+      }
+    },
+    {
+      "EventNum": 73,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "9deef0fa444e59d7a08e615f25628826e7feddf9"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "22e041251eb54eeb3270245759aa3e8bd3b77a647db988b681b1eafc6960aa45"
+        }
+      ],
+      "EventSize": 32,
+      "Event": {
+        "String": "grub_cmd: export linux_gfx_mode"
+      }
+    },
+    {
+      "EventNum": 74,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "a484295bb6d063622204c805e64308a93d8f360d"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "5de40387ebb49e7912d26d77a9061760293a0069c6adf88b09e4b41c85024063"
+        }
+      ],
+      "EventSize": 801,
+      "Event": {
+        "String": "grub_cmd: menuentry Ubuntu --class ubuntu --class gnu-linux --class gnu --class os --id gnulinux-simple-68a3fb48-331d-433e-9ab6-f89f3b877c81 {\n\trecordfail\n\tload_video\n\tgfxmode $linux_gfx_mode\n\tinsmod gzio\n\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi\n\tinsmod part_gpt\n\tinsmod ext2\n\tset root='hd0,gpt1'\n\tif [ x$feature_platform_search_hint = xy ]; then\n\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1  68a3fb48-331d-433e-9ab6-f89f3b877c81\n\telse\n\t  search --no-floppy --fs-uuid --set=root 68a3fb48-331d-433e-9ab6-f89f3b877c81\n\tfi\n\tlinux\t/boot/vmlinuz-5.4.0-81-generic root=UUID=68a3fb48-331d-433e-9ab6-f89f3b877c81 ro biosdevname=0 net.ifnames=0 console=tty1 console=ttyS0\n\tinitrd\t/boot/initrd.img-5.4.0-81-generic\n}"
+      }
+    },
+    {
+      "EventNum": 75,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "d47e1937f7342c18595e49003003c9531f367cbb"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "11badc6d0dcd67600d6f50f3dd68512eca5c6afb9d527eeca0d5d0ce670ef4fb"
+        }
+      ],
+      "EventSize": 2020,
+      "Event": {
+        "String": "grub_cmd: submenu Advanced options for Ubuntu --id gnulinux-advanced-68a3fb48-331d-433e-9ab6-f89f3b877c81 {\n\tmenuentry 'Ubuntu, with Linux 5.4.0-81-generic' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-5.4.0-81-generic-advanced-68a3fb48-331d-433e-9ab6-f89f3b877c81' {\n\t\trecordfail\n\t\tload_video\n\t\tgfxmode $linux_gfx_mode\n\t\tinsmod gzio\n\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi\n\t\tinsmod part_gpt\n\t\tinsmod ext2\n\t\tset root='hd0,gpt1'\n\t\tif [ x$feature_platform_search_hint = xy ]; then\n\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1  68a3fb48-331d-433e-9ab6-f89f3b877c81\n\t\telse\n\t\t  search --no-floppy --fs-uuid --set=root 68a3fb48-331d-433e-9ab6-f89f3b877c81\n\t\tfi\n\t\techo\t'Loading Linux 5.4.0-81-generic ...'\n\t\tlinux\t/boot/vmlinuz-5.4.0-81-generic root=UUID=68a3fb48-331d-433e-9ab6-f89f3b877c81 ro biosdevname=0 net.ifnames=0 console=tty1 console=ttyS0\n\t\techo\t'Loading initial ramdisk ...'\n\t\tinitrd\t/boot/initrd.img-5.4.0-81-generic\n\t}\n\tmenuentry 'Ubuntu, with Linux 5.4.0-81-generic (recovery mode)' --class ubuntu --class gnu-linux --class gnu --class os $menuentry_id_option 'gnulinux-5.4.0-81-generic-recovery-68a3fb48-331d-433e-9ab6-f89f3b877c81' {\n\t\trecordfail\n\t\tload_video\n\t\tinsmod gzio\n\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi\n\t\tinsmod part_gpt\n\t\tinsmod ext2\n\t\tset root='hd0,gpt1'\n\t\tif [ x$feature_platform_search_hint = xy ]; then\n\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1  68a3fb48-331d-433e-9ab6-f89f3b877c81\n\t\telse\n\t\t  search --no-floppy --fs-uuid --set=root 68a3fb48-331d-433e-9ab6-f89f3b877c81\n\t\tfi\n\t\techo\t'Loading Linux 5.4.0-81-generic ...'\n\t\tlinux\t/boot/vmlinuz-5.4.0-81-generic root=UUID=68a3fb48-331d-433e-9ab6-f89f3b877c81 ro recovery nomodeset dis_ucode_ldr biosdevname=0 net.ifnames=0\n\t\techo\t'Loading initial ramdisk ...'\n\t\tinitrd\t/boot/initrd.img-5.4.0-81-generic\n\t}\n}"
+      }
+    },
+    {
+      "EventNum": 76,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "273f5c80c12e935c1d37c2cfe3e161bc42d79d8e"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "1ea37430950c837021ebcc02f98c12018c31e593e366429436e1353584c7ec72"
+        }
+      ],
+      "EventSize": 49,
+      "Event": {
+        "String": "grub_cmd: [ -f (hd0,gpt1)/boot/grub/custom.cfg ]"
+      }
+    },
+    {
+      "EventNum": 77,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "a3326df3194201575e51c3b9a1c8d5d17aeff2d0"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "d5478d9057580531bf6ff37383b01bb78e1279c20a23721aa3a67ad0d1ca35db"
+        }
+      ],
+      "EventSize": 76,
+      "Event": {
+        "String": "grub_cmd: [ -z (hd0,gpt1)/boot/grub -a -f (hd0,gpt1)/boot/grub/custom.cfg ]"
+      }
+    },
+    {
+      "EventNum": 78,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "17c76a65ebda6aa310da041aabbcd6483bf00df4"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "bf5d10a466c0f77818990a9d0fdcc8fa2c4561ba92912d5fbc9d4ac1e31a00fb"
+        }
+      ],
+      "EventSize": 27,
+      "Event": {
+        "String": "grub_cmd: setparams Ubuntu"
+      }
+    },
+    {
+      "EventNum": 79,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "98d066f8ffd046bacb38b106188cbe7fe9ada729"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "a57e067e286efc4eea89659d40f13a38cc1792e4277bed820ded674c94bf2ead"
+        }
+      ],
+      "EventSize": 21,
+      "Event": {
+        "String": "grub_cmd: recordfail"
+      }
+    },
+    {
+      "EventNum": 80,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "bac17085fef5043662a50cef18bf366844c074ff"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "64bda8f65b1585d7868248a292c449660cc8f75075c10d87ae59a4db401ce119"
+        }
+      ],
+      "EventSize": 27,
+      "Event": {
+        "String": "grub_cmd: set recordfail=1"
+      }
+    },
+    {
+      "EventNum": 81,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "55cfd6463ef334abb6b48080b33ec063a9c051eb"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "cfa4676ffe751d1547e77a8d66a033b59b3eed3400d9b3a305d2601891ab0e59"
+        }
+      ],
+      "EventSize": 22,
+      "Event": {
+        "String": "grub_cmd: [ -n true ]"
+      }
+    },
+    {
+      "EventNum": 82,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "d31e5f156b716d7835b261891644bb5f7f65e285"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "4e7a22f96bae467df0f26975e0bf7614d6b92993301c65bae6a85c6530e460bf"
+        }
+      ],
+      "EventSize": 18,
+      "Event": {
+        "String": "grub_cmd: [ -z  ]"
+      }
+    },
+    {
+      "EventNum": 83,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "925ee69b7c8ac4937cbe47d5c85351d869b4e8d7"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "ce2cc20777ba8d3bc75b662163c3abe370344d4bae17d75fb5bd408d1fb6badf"
+        }
+      ],
+      "EventSize": 30,
+      "Event": {
+        "String": "grub_cmd: save_env recordfail"
+      }
+    },
+    {
+      "EventNum": 84,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "8fe59e66d6ec198420477f24f791e929f153e144"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "7626abd8be7442c2e575364a3e95cb3a3b533c58afbba402d2bdabdff85d29c7"
+        }
+      ],
+      "EventSize": 21,
+      "Event": {
+        "String": "grub_cmd: load_video"
+      }
+    },
+    {
+      "EventNum": 85,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+        }
+      ],
+      "EventSize": 22,
+      "Event": {
+        "String": "grub_cmd: [ xy = xy ]"
+      }
+    },
+    {
+      "EventNum": 86,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "59ced343b060b7df54fa7ba251ef877940601ee4"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "d71353f5368eb2c1280590928128979bd96ea8db1e8c81493f7878383b76ab3b"
+        }
+      ],
+      "EventSize": 27,
+      "Event": {
+        "String": "grub_cmd: insmod all_video"
+      }
+    },
+    {
+      "EventNum": 87,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "13ad1a8ddf647c8148f1739b6081d7838816b59f"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "2fa8065d9ee309384d35f8d530186b776d26e1bb5632f89a46d56e93b140282b"
+        }
+      ],
+      "EventSize": 23,
+      "Event": {
+        "String": "grub_cmd: gfxmode keep"
+      }
+    },
+    {
+      "EventNum": 88,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "2e1c676ddd9b16f0d720cd5c66d85732de7b77b6"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "15a5018b0177cf9c49c0b97911df67e7f2c193d3613e3fc4c9eb98a2b5d06fcc"
+        }
+      ],
+      "EventSize": 30,
+      "Event": {
+        "String": "grub_cmd: set gfxpayload=keep"
+      }
+    },
+    {
+      "EventNum": 89,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "5241b5dfa58679895d95f79ffa0a5f42ba4b55ea"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "b55d84bbb0a00f175ebbc6ca167f18dd6a9cb49b141535bfcc6c4ef9c53b1866"
+        }
+      ],
+      "EventSize": 26,
+      "Event": {
+        "String": "grub_cmd: [ keep = keep ]"
+      }
+    },
+    {
+      "EventNum": 90,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "886e1d072aa199f4f6d21499067e0a148ae8046b"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "141dcfd03b1736e86f617122e7f31cffe89f7cf0faa773f1bced28f7f0c1fa13"
+        }
+      ],
+      "EventSize": 38,
+      "Event": {
+        "String": "grub_cmd: set vt_handoff=vt.handoff=7"
+      }
+    },
+    {
+      "EventNum": 91,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "ba509ca38210f0683c477c9dc40e4c4f653e1dfb"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "6c4674d4c652ee67b98a6206d7541ccbf2d5dc0a18dae31ad66e82c794c49784"
+        }
+      ],
+      "EventSize": 22,
+      "Event": {
+        "String": "grub_cmd: insmod gzio"
+      }
+    },
+    {
+      "EventNum": 92,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "2de845dce8a51c8fddbaa04686760093325b7569"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "18865468f2e4bd9f0cc4ffdda1335f405d06df8d6ff183b373f50e08e81f924d"
+        }
+      ],
+      "EventSize": 26,
+      "Event": {
+        "String": "grub_cmd: [ xefi = xxen ]"
+      }
+    },
+    {
+      "EventNum": 93,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "a4e1c6f50579b47c964111d1ea2170e6f923c941"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "62cd76d31ca3d10d742e46c6ff171046ce19dd90f361a827fec6571e59c24794"
+        }
+      ],
+      "EventSize": 26,
+      "Event": {
+        "String": "grub_cmd: insmod part_gpt"
+      }
+    },
+    {
+      "EventNum": 94,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "af3f07abac9e5c56b82f09ab98328905aabbf6ef"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "b838a4d2860c81058105fbb1907a1fb7f60b65591b099b3b000d9b31d8d2fb20"
+        }
+      ],
+      "EventSize": 22,
+      "Event": {
+        "String": "grub_cmd: insmod ext2"
+      }
+    },
+    {
+      "EventNum": 95,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "cbf1bcb38df72c190b4db0d27ee96eca3c7a9e44"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "20df4eb78bbf966925af51ad614806aa3ad6f146a9a0c85ac2582a3eaa9a30ca"
+        }
+      ],
+      "EventSize": 28,
+      "Event": {
+        "String": "grub_cmd: set root=hd0,gpt1"
+      }
+    },
+    {
+      "EventNum": 96,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+        }
+      ],
+      "EventSize": 22,
+      "Event": {
+        "String": "grub_cmd: [ xy = xy ]"
+      }
+    },
+    {
+      "EventNum": 97,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "ece832a397c8b0bc58d5c1c88ecdd0d8687aaa7e"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "50edcfbf8f279693dbb4716610a1880772d1029516c7cac2ac3134611c91150a"
+        }
+      ],
+      "EventSize": 156,
+      "Event": {
+        "String": "grub_cmd: search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1 68a3fb48-331d-433e-9ab6-f89f3b877c81"
+      }
+    },
+    {
+      "EventNum": 98,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "77362cc8523cb839f44f4b714283cfde08ad4ac4"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "9b6dda731eee32077d3fb6d0caafa595fd5e3cc574a8f3d8b2545a4c086c324a"
+        }
+      ],
+      "EventSize": 152,
+      "Event": {
+        "String": "grub_cmd: linux /boot/vmlinuz-5.4.0-81-generic root=UUID=68a3fb48-331d-433e-9ab6-f89f3b877c81 ro biosdevname=0 net.ifnames=0 console=tty1 console=ttyS0"
+      }
+    },
+    {
+      "EventNum": 99,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "be3c11fe4bf920e2be332d451214f54048fd7030"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "811e03f12dd1da5dc4c318bfbe972078ef2f7b9b8d813fc4cc9658ab40b7f374"
+        }
+      ],
+      "EventSize": 31,
+      "Event": {
+        "String": "/boot/vmlinuz-5.4.0-81-generic"
+      }
+    },
+    {
+      "EventNum": 100,
+      "PCRIndex": 4,
+      "EventType": "EV_EFI_BOOT_SERVICES_APPLICATION",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "62b47006402dfe0afe7896a572adf0d58d4d9eb8"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "8d25a4704a6dd7087ba00f1efc0ef34c75214963973c21c06aff1de0437dbf81"
+        }
+      ],
+      "EventSize": 32,
+      "Event": {
+        "ImageLocationInMemory": 2024509568,
+        "ImageLengthInMemory": 11772160,
+        "ImageLinkTimeAddress": 0,
+        "LengthOfDevicePath": 0,
+        "DevicePath": ""
+      }
+    },
+    {
+      "EventNum": 101,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "6f46d4ff43cea27bb9caa4b032e1180dbf4cc3ba"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "e62bcc5831aee56486875ceda90ad9a9e519d1856825d259f2b6fb30aaf8e099"
+        }
+      ],
+      "EventSize": 152,
+      "Event": {
+        "String": "kernel_cmdline: /boot/vmlinuz-5.4.0-81-generic root=UUID=68a3fb48-331d-433e-9ab6-f89f3b877c81 ro biosdevname=0 net.ifnames=0 console=tty1 console=ttyS0"
+      }
+    },
+    {
+      "EventNum": 102,
+      "PCRIndex": 8,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "0251140b7b045d47cf40cd191a7926201ff5746b"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "8a23f0f195cd0992fadbd5101086a9370fe0bea0f69d9cd01a0bbb76363bbdb0"
+        }
+      ],
+      "EventSize": 51,
+      "Event": {
+        "String": "grub_cmd: initrd /boot/initrd.img-5.4.0-81-generic"
+      }
+    },
+    {
+      "EventNum": 103,
+      "PCRIndex": 9,
+      "EventType": "EV_IPL",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "3e61d8e12ab469f8221f648b9730fb435a87921a"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "dca6ad47e7e912c7affbcdea95e138932194b92b2805b11cb6c4881db171444b"
+        }
+      ],
+      "EventSize": 34,
+      "Event": {
+        "String": "/boot/initrd.img-5.4.0-81-generic"
+      }
+    },
+    {
+      "EventNum": 104,
+      "PCRIndex": 5,
+      "EventType": "EV_EFI_ACTION",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "443a6b7b82b7af564f2e393cd9d5a388b7fa4a98"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "d8043d6b7b85ad358eb3b6ae6a873ab7ef23a26352c5dc4faa5aeedacf5eb41b"
+        }
+      ],
+      "EventSize": 29,
+      "Event": "Exit Boot Services Invocation"
+    },
+    {
+      "EventNum": 105,
+      "PCRIndex": 5,
+      "EventType": "EV_EFI_ACTION",
+      "DigestCount": 2,
+      "Digests": [
+        {
+          "AlgorithmId": "sha1",
+          "Digest": "475545ddc978d7bfd036facc7e2e987f48189f0d"
+        },
+        {
+          "AlgorithmId": "sha256",
+          "Digest": "b54f7542cbd872a81a9d9dea839b2b8d747c7ebd5ea6615c40f42f44a6dbeba0"
+        }
+      ],
+      "EventSize": 40,
+      "Event": "Exit Boot Services Returned with Success"
+    }
+  ],
+  "pcrs": {
+    "sha1": {
+      "0": 1.3504255935497549e+48,
+      "1": 2.0751737333799254e+47,
+      "2": 9.516472259493162e+47,
+      "3": 1.0199520270429489e+48,
+      "4": 4.1422239446616244e+47,
+      "5": 6.624036841460396e+47,
+      "6": 1.0199520270429489e+48,
+      "7": 5.239655223385468e+47,
+      "8": 1.098816451242065e+48,
+      "9": 5.991412736193563e+47,
+      "14": 1.3656708639811181e+48
+    },
+    "sha256": {
+      "0": 5.227810435067438e+75,
+      "1": 1.1399657570707375e+77,
+      "2": 9.42102010040304e+76,
+      "3": 2.7713969312399434e+76,
+      "4": 5.048403012845393e+76,
+      "5": 3.317904681608373e+76,
+      "6": 2.7713969312399434e+76,
+      "7": 7.413156655461684e+76,
+      "8": 8.071157784213494e+76,
+      "9": 2.4688752307035072e+76,
+      "14": 7.943488946462721e+76
+    }
+  }
+}

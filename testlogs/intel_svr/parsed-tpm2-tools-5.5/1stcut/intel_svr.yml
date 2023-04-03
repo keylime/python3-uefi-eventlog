@@ -1,0 +1,2199 @@
+---
+version: 2
+events:
+- EventNum: 0
+  PCRIndex: 0
+  EventType: EV_NO_ACTION
+  Digest: "0000000000000000000000000000000000000000"
+  EventSize: 37
+  SpecID:
+  - Signature: Spec ID Event03
+    platformClass: 1
+    specVersionMinor: 0
+    specVersionMajor: 2
+    specErrata: 0
+    uintnSize: 2
+    numberOfAlgorithms: 2
+    Algorithms:
+    - Algorithm[0]:
+      algorithmId: sha1
+      digestSize: 20
+    - Algorithm[1]:
+      algorithmId: sha256
+      digestSize: 32
+    vendorInfoSize: 0
+- EventNum: 1
+  PCRIndex: 0
+  EventType: EV_S_CRTM_VERSION
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "e3e19a0c613d62a5ac002ae9fdfc694c6b8780e4"
+  - AlgorithmId: sha256
+    Digest: "8fa62abc35d63473558c05b873708073105011160bb948e09f26d3abba54acc9"
+  EventSize: 56
+  Event: "5300440056002e00520050002e004200310031002e00300034002000520065006c00650061007300650020004200750069006c0064000000"
+- EventNum: 2
+  PCRIndex: 0
+  EventType: EV_EFI_PLATFORM_FIRMWARE_BLOB
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "58a17f92d6f739bf1323fb55de09c21428fe5ad4"
+  - AlgorithmId: sha256
+    Digest: "12a91290c5756d7bc2d18c7e78d5c4796f134909a6014ec42526d0b416cc8d80"
+  EventSize: 16
+  Event:
+    BlobBase: 0xfff00000
+    BlobLength: 0x100000
+- EventNum: 3
+  PCRIndex: 0
+  EventType: EV_EFI_PLATFORM_FIRMWARE_BLOB
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "8aa0c13815baacad3382124bb0ca2ed0bcacb565"
+  - AlgorithmId: sha256
+    Digest: "1ac55e9a87d490c6ea0ef32771bd5cddd4a6967a348a037d5d73793c671be581"
+  EventSize: 16
+  Event:
+    BlobBase: 0xffd00000
+    BlobLength: 0x100000
+- EventNum: 4
+  PCRIndex: 0
+  EventType: EV_EFI_PLATFORM_FIRMWARE_BLOB
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "ed331f55d05feb1cdfccf25197b4fc46ec420dbb"
+  - AlgorithmId: sha256
+    Digest: "c10d4ab093cb0c7b983762908e0e3faee0bd7c291335d56cafc4acc1865acfee"
+  EventSize: 16
+  Event:
+    BlobBase: 0xff890000
+    BlobLength: 0x3a0000
+- EventNum: 5
+  PCRIndex: 7
+  EventType: EV_EFI_VARIABLE_DRIVER_CONFIG
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d4fdd1f14d4041494deb8fc990c45343d2277d08"
+  - AlgorithmId: sha256
+    Digest: "ccfc4bb32888a345bc8aeadaba552b627d99348c767681ab3141f5b01e40a40e"
+  EventSize: 53
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 10
+    VariableDataLength: 1
+    UnicodeName: SecureBoot
+    VariableData:
+      Enabled: 'Yes'
+- EventNum: 6
+  PCRIndex: 7
+  EventType: EV_EFI_VARIABLE_DRIVER_CONFIG
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "ad0ed1ec8ec445a98cfc723af1bcaf72175e55d8"
+  - AlgorithmId: sha256
+    Digest: "d93e30d35e82122c69625a0262a72b0d5254703e520abc3fa4e35de4010bb6de"
+  EventSize: 798
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 2
+    VariableDataLength: 762
+    UnicodeName: PK
+    VariableData:
+    - SignatureType: a5c059a1-94e4-4aa7-87b5-ab155c2bf072
+      SignatureListSize: 762
+      SignatureHeaderSize: 0
+      SignatureSize: 734
+      Keys:
+      - SignatureOwner: 00000000-0000-0000-0000-000000000000
+        SignatureData: 308202ca308201b2020101300d06092a864886f70d01010b0500302f312d302b06035504030c244a616d657320426f74746f6d6c65792053656375726520426f6f7420526f6f74204b6579301e170d3136303231393230333833365a170d3236303231363230333833365a30273125302306035504030c1c4a616d657320426f74746f6d6c657920506c6174666f726d204b657930820122300d06092a864886f70d01010105000382010f003082010a0282010100afdf385d23f75f1b29cc14785db345ba8e6126bc8dc1ba3299cbec08868fd7afac248a7bb6c922481eb9fbfca80d3cf0a9d7a149bf7b3234c3b8f97f81e3a744efb8b86d2f732cf5b07b6516a5e9fad7502f211eccda78d294ee58952fef9b064749c3f801a89b972b2abf5bbef24cd34a8d7133962daebb1cd1b2004734bf5b6d54c15cb42f96e99b87fce8517387ead86771442c35d218dbfdcdfb9aab609b442a598e768364e6708014c37ae82ebc6eb2952824857b3295c018334acb8a9616ca2ea6bb18f55a1f68b100f3fa7bfd6bc3ae97223e0cff618036d92011ab5951bafa045233f5706987f68b0acf10cebae4348308762f619224f95abf12edbf0203010001300d06092a864886f70d01010b0500038201010088a4bf8d89b32ad318d558a1e28225bab9c0922dacf8e8c1ff5498f70bfe5f428aea0199380c9ef9aec466450b09b6f402d12308d66dfc77d4b0bc1b44914d27de453deb450ed7d33df08c37d6c20701cf174e89625432369cd7060a5309fada0d14123352d4981a03cfb813ceba0f93e0366a3685559fc3e8bf31e477e8226e72db13635b8ae1d6ceafd34e6636df60df4eea54c65afaad64176b536f14f10203ee49303613ab1338d32715965f953f1b4fa249f29af70f185b2f55683f205d81150ca2bbdf70f93e5a195f1f1c2906ebbd31a8e4a7cc3395c37272604320decf66fca52dee2830e3fef21e4d9557dd8a80e1ef9b124272ca00f94e35f3c7d9
+- EventNum: 7
+  PCRIndex: 7
+  EventType: EV_EFI_VARIABLE_DRIVER_CONFIG
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "cddc61f615bbad432a291b514aa8c40e9b870736"
+  - AlgorithmId: sha256
+    Digest: "664ffc307a13d1f19e910194c64cafc0d03e6881c9f19588d4872774dc5c3ad0"
+  EventSize: 804
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 3
+    VariableDataLength: 766
+    UnicodeName: KEK
+    VariableData:
+    - SignatureType: a5c059a1-94e4-4aa7-87b5-ab155c2bf072
+      SignatureListSize: 766
+      SignatureHeaderSize: 0
+      SignatureSize: 738
+      Keys:
+      - SignatureOwner: 00000000-0000-0000-0000-000000000000
+        SignatureData: 308202ce308201b6020101300d06092a864886f70d01010b0500302f312d302b06035504030c244a616d657320426f74746f6d6c65792053656375726520426f6f7420526f6f74204b6579301e170d3136303231393230333935345a170d3236303231363230333935345a302b3129302706035504030c204a616d657320426f74746f6d6c6579204b65792045786368616e6765204b657930820122300d06092a864886f70d01010105000382010f003082010a0282010100cf602e8ffd9adc282e8cced77d3c40176b9860df498d4807dd22be4197898cd479455fafbedaf0097ff2c458e61a2e344080313a0aa43a548a76c283af50a1f6b563ca6b07ca8021ced4cb7e8e8c07b34142a195b32e11b8660be9a308cbd63ffd3be90e146d704fa68f3f2815d942592e6ad09b0cf56f91416fda5ac0da6f75ff9fd4308fbb9640b4b91ab471afc08d6205badd903c38686c114f3d86752788b0cb7b2cdbefa7468268703dde6c957c59bacdc178b3a7e3ab91a8e05b0b643afdfdc3c4ce080e73220d066c151acf9defa4841fe6691693b1e872cf214c26cbfd977d2a6390bfd0facfb32aacc7074539b9f817572be8371182983a523a0d170203010001300d06092a864886f70d01010b050003820101008c351bd52fe39f3df585619f7828f0135e2a4a00432c837afb5c6a3222733a7ab4c4daa427ab20c45fe3268f226ed3aa7274add3abea5b1438bf17c17db4463f712145d6c9d903052cc4257050600de30b9dcea42f793e2f7ff34d18dbced8596f5e1e890be0cdebeb290d4779eb71445cf68e9396be302dcb31f08696e2d94e0d29db5429ad93b8c6baee13252bfec7f9131d8f05625bfcdc4249b653df00c0ca71a76c532f4ef5ef67b16aa1ab8355b84d576fc6a4a3aead542aa70bcfc0a5557705ea4af74d91bad6a65aa2c69d8d5f754617a6d51337a279b6099a1c85f1bcd7d2c14eed6233cdf49365ad84b406472200532b776f9215239391b43e8c6c
+- EventNum: 8
+  PCRIndex: 7
+  EventType: EV_EFI_VARIABLE_DRIVER_CONFIG
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "df57be120e6b778508bf417cfb2507be2f57540c"
+  - AlgorithmId: sha256
+    Digest: "25ca2778d4824ed6adb4a0ca2ccb046e76fe3ee8b9f462b2a7e2282055cd486e"
+  EventSize: 806
+  Event:
+    VariableName: d719b2cb-3d3a-4596-a3bc-dad00e67656f
+    UnicodeNameLength: 2
+    VariableDataLength: 770
+    UnicodeName: db
+    VariableData:
+    - SignatureType: a5c059a1-94e4-4aa7-87b5-ab155c2bf072
+      SignatureListSize: 770
+      SignatureHeaderSize: 0
+      SignatureSize: 742
+      Keys:
+      - SignatureOwner: 00000000-0000-0000-0000-000000000000
+        SignatureData: 308202d2308201ba020101300d06092a864886f70d01010b0500302f312d302b06035504030c244a616d657320426f74746f6d6c65792053656375726520426f6f7420526f6f74204b6579301e170d3136303231393230343231385a170d3236303231363230343231385a302f312d302b06035504030c244a616d657320426f74746f6d6c65792055454649204170706c69636174696f6e204b657930820122300d06092a864886f70d01010105000382010f003082010a0282010100aed704d45cfa00b6ee1fda8bad443b83be8ee123874cd5b5f6ceda444694c585ee712b2adfecfdbe1d6167a616e0f9f76f590d359cf3ee957a17b49da2044ab26c9ca5dec3f61017736f7c2bee17e8a4939f6b584da91ca0f800de7a54d85792dba1926c3c54d252f43b50d0a7c699c829d503ba27be1c387785129e5453615c48348a3250e014d6ee4ef76ba707eed48670c6b456281f3e99ba4a467ae214e45b61fdda9634aeb63093f5d7f04a31374f44a27bcb97c792dc081f49d06b09e0608b6d45c4fb2ff4cd85c75a8351bd46af49d73e7e09a586c326bb3553edbdf830f41a2e24aa0a6270399060088b8feb91732fb6204a2109ef501381cc058dff0203010001300d06092a864886f70d01010b05000382010100628dffc3ce744bb736d8b889d1298eb75d558a8a650c65596354c13911121933446eb9c1e7ba531c8cf99dd4d6b26e204866050fe596c7d8b37851dff216b71107c29a7930caac6bb75029ee6561c7f7374310a57cd0900711af43b401a943061cf5805ec75b7ac107919644efd2c7e2f53857e50f64f6a7104915d450ca516341cfcd6807bd85c1a48dd5591a06cdf5758aff42712fb27b916bb17b840df08465fd7f0796e67d2a1b9b69ef242534540c7f3b4eb65ef7a52b4df23c36981ab623d3b58eeb5f890d18a52ff46683912cdd7510863b1de972739a1dec222bdf2a7e05f1fbf659220c761bd3b1d822c8c957659c2e9e623a359257687958a29132
+- EventNum: 9
+  PCRIndex: 7
+  EventType: EV_EFI_VARIABLE_DRIVER_CONFIG
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "734424c9fe8fc71716c42096f4b74c88733b175e"
+  - AlgorithmId: sha256
+    Digest: "9f75b6823bff6af1024a4e2036719cdd548d3cbc2bf1de8e7ef4d0ed01f94bf9"
+  EventSize: 38
+  Event:
+    VariableName: d719b2cb-3d3a-4596-a3bc-dad00e67656f
+    UnicodeNameLength: 3
+    VariableDataLength: 0
+    UnicodeName: dbx
+    VariableData:
+- EventNum: 10
+  PCRIndex: 7
+  EventType: EV_EFI_VARIABLE_DRIVER_CONFIG
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "85d64b3c1d4eb49f591158589311f426ab186e83"
+  - AlgorithmId: sha256
+    Digest: "b70b7c1b92209af66d79d12dec1f14f4b8c71c0c69be22a1a04f5c5804e26ec3"
+  EventSize: 51
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 9
+    VariableDataLength: 1
+    UnicodeName: AuditMode
+    VariableData: "00"
+- EventNum: 11
+  PCRIndex: 7
+  EventType: EV_EFI_VARIABLE_DRIVER_CONFIG
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "880e1767791f8f60bb7fced5628d6af3accaca69"
+  - AlgorithmId: sha256
+    Digest: "8f631c254f377b061e58bad2f69b28e05db942f59d53e3f05da88021618345e8"
+  EventSize: 57
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 12
+    VariableDataLength: 1
+    UnicodeName: DeployedMode
+    VariableData: "00"
+- EventNum: 12
+  PCRIndex: 7
+  EventType: EV_SEPARATOR
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9069ca78e7450a285173431b3e52c5c25299e473"
+  - AlgorithmId: sha256
+    Digest: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  EventSize: 4
+  Event: "00000000"
+- EventNum: 13
+  PCRIndex: 0
+  EventType: EV_POST_CODE
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "8157296c7b49e672104e55d4c17f6925808101dc"
+  - AlgorithmId: sha256
+    Digest: "ecab4f1652ce9cc81ea484cfeed44a8a83dc9245b16d9353b82cdf77828e308e"
+  EventSize: 9
+  Event: |-
+    ACPI DATA
+- EventNum: 14
+  PCRIndex: 0
+  EventType: EV_POST_CODE
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "b0469aa139a98ebeae9693588554bab11e19724c"
+  - AlgorithmId: sha256
+    Digest: "1efad6adef14bd2607d26be9cdf8dbc7d26a6f2db9452d685ec64e0dc8c60d35"
+  EventSize: 9
+  Event: |-
+    ACPI DATA
+- EventNum: 15
+  PCRIndex: 0
+  EventType: Unknown event type
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "0908d15fdbc9c6a9ca14fcd7c5618d7483f92d9f"
+  - AlgorithmId: sha256
+    Digest: "9a9c9dcd0add17f6fe377f64cfc3e80cd8daaa3a49b127df74effb294d7e0173"
+  EventSize: 0
+- EventNum: 16
+  PCRIndex: 1
+  EventType: EV_EFI_HANDOFF_TABLES
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "94492af42c36c6ac1091f50c93084622a0f9e6c0"
+  - AlgorithmId: sha256
+    Digest: "461d6c4b64f6339bab69144b71a3761c4159d5520966832ae2653bf8687ff5d9"
+  EventSize: 32
+  Event: "01000000000000004415fdf294972c4a992ee5bbcf20e394006036be00000000"
+- EventNum: 17
+  PCRIndex: 1
+  EventType: EV_TABLE_OF_DEVICES
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "2d2846b47f1a94785ae44601b30cdcba9c2994f3"
+  - AlgorithmId: sha256
+    Digest: "ab11c3311eda733bae984e1ee4524e78a3a4a9cea51c88c5e523fc232af2753d"
+  EventSize: 32
+  Event: "010000000000000005a6dd3f6ea7464fad2912f4531b3d0898844abc00000000"
+- EventNum: 18
+  PCRIndex: 1
+  EventType: EV_EFI_VARIABLE_BOOT
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "5f429eb9acfa6829c3847fd4d5638d7103a62cee"
+  - AlgorithmId: sha256
+    Digest: "a9f0d22d02d9dd05586a43065a32ed5ff96f0705abde49086fb4e1f51a8d7c3e"
+  EventSize: 60
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 9
+    VariableDataLength: 10
+    UnicodeName: BootOrder
+    VariableData:
+    - Boot0004
+    - Boot0000
+    - Boot0001
+    - Boot0002
+    - Boot0003
+- EventNum: 19
+  PCRIndex: 1
+  EventType: EV_EFI_VARIABLE_BOOT
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "8d04a385a1dc5cd7716a4ed8ce892a4229005684"
+  - AlgorithmId: sha256
+    Digest: "704eccea3d9bbdc77470d1b161a94944585313450374614af9f23537694fdfb9"
+  EventSize: 166
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 8
+    VariableDataLength: 118
+    UnicodeName: Boot0004
+    VariableData:
+      Enabled: 'Yes'
+      FilePathListLength: 98
+      Description: "debian"
+      DevicePath: '04012a0001000000000800000000000000a00f0000000000a84351837bd0be419144043abeec04ea0202040434005c004500460049005c00640065006200690061006e005c007300680069006d007800360034002e0065006600690000007fff0400'
+- EventNum: 20
+  PCRIndex: 1
+  EventType: EV_EFI_VARIABLE_BOOT
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "6cb0c5049c04c6834fa26b7fe88d16e3059bf089"
+  - AlgorithmId: sha256
+    Digest: "eef77f4203865773b8a798a47bb13cba01c16a6e75d38b673a2c72a80e541199"
+  EventSize: 122
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 8
+    VariableDataLength: 74
+    UnicodeName: Boot0000
+    VariableData:
+      Enabled: 'Yes'
+      FilePathListLength: 44
+      Description: "Enter Setup"
+      DevicePath: '04071400357bbbcd3368d64e9ab257d2acddf6f00406140021aa2c4614760345836e8ab6f46623317fff0400'
+- EventNum: 21
+  PCRIndex: 1
+  EventType: EV_EFI_VARIABLE_BOOT
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "2127a2d8d9e6795e5c3b8f54952036f281c2495c"
+  - AlgorithmId: sha256
+    Digest: "2c32bcc8e0bf484101c5f03c2d0a552c623a1e37fbeef5c78e3d3fae2e18f32e"
+  EventSize: 138
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 8
+    VariableDataLength: 90
+    UnicodeName: Boot0001
+    VariableData:
+      Enabled: 'Yes'
+      FilePathListLength: 44
+      Description: "UEFI Internal Shell"
+      DevicePath: '04071400357bbbcd3368d64e9ab257d2acddf6f00406140083a5047c3e9e1c4fad65e05268d0b4d17fff0400'
+- EventNum: 22
+  PCRIndex: 1
+  EventType: EV_EFI_VARIABLE_BOOT
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "0927dfc422075e14d0e1e50eb97e037c2aa8b6b1"
+  - AlgorithmId: sha256
+    Digest: "6e6ffc3aadf2aa6b1b4a95de1fe99d8b6108f1fb778c1f624b2ba9b9ce60fc10"
+  EventSize: 132
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 8
+    VariableDataLength: 84
+    UnicodeName: Boot0002
+    VariableData:
+      Enabled: 'No'
+      FilePathListLength: 44
+      Description: "Boot Device List"
+      DevicePath: '04071400357bbbcd3368d64e9ab257d2acddf6f004061400dc5bc2eef267954db1d5f81b2039d11d7fff0400'
+- EventNum: 23
+  PCRIndex: 1
+  EventType: EV_EFI_VARIABLE_BOOT
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "a05f1c9b6465dfe379868fb08964da5140492cc9"
+  - AlgorithmId: sha256
+    Digest: "337e062936cdaad2fa5880357ba21aeff77688ac99e586ffb8bff8d7e4963965"
+  EventSize: 154
+  Event:
+    VariableName: 8be4df61-93ca-11d2-aa0d-00e098032b8c
+    UnicodeNameLength: 8
+    VariableDataLength: 106
+    UnicodeName: Boot0003
+    VariableData:
+      Enabled: 'Yes'
+      FilePathListLength: 32
+      Description: "UEFI INTEL SSDSC2CW120A3 "
+      DevicePath: '02010c00d041030a0000000001010600021f03120a000200ffff00007fff04004eac0881119f594d850ee21a522c59b2'
+- EventNum: 24
+  PCRIndex: 4
+  EventType: EV_EFI_ACTION
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "cd0fdb4531a6ec41be2753ba042637d6e5f7f256"
+  - AlgorithmId: sha256
+    Digest: "3d6772b4f84ed47595d72a2c4c5ffd15f5bb72c7507fe26f2aaee2c69d5633ba"
+  EventSize: 40
+  Event: |-
+    Calling EFI Application from Boot Option
+- EventNum: 25
+  PCRIndex: 0
+  EventType: EV_SEPARATOR
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9069ca78e7450a285173431b3e52c5c25299e473"
+  - AlgorithmId: sha256
+    Digest: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  EventSize: 4
+  Event: "00000000"
+- EventNum: 26
+  PCRIndex: 1
+  EventType: EV_SEPARATOR
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9069ca78e7450a285173431b3e52c5c25299e473"
+  - AlgorithmId: sha256
+    Digest: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  EventSize: 4
+  Event: "00000000"
+- EventNum: 27
+  PCRIndex: 2
+  EventType: EV_SEPARATOR
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9069ca78e7450a285173431b3e52c5c25299e473"
+  - AlgorithmId: sha256
+    Digest: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  EventSize: 4
+  Event: "00000000"
+- EventNum: 28
+  PCRIndex: 3
+  EventType: EV_SEPARATOR
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9069ca78e7450a285173431b3e52c5c25299e473"
+  - AlgorithmId: sha256
+    Digest: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  EventSize: 4
+  Event: "00000000"
+- EventNum: 29
+  PCRIndex: 4
+  EventType: EV_SEPARATOR
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9069ca78e7450a285173431b3e52c5c25299e473"
+  - AlgorithmId: sha256
+    Digest: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  EventSize: 4
+  Event: "00000000"
+- EventNum: 30
+  PCRIndex: 5
+  EventType: EV_SEPARATOR
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9069ca78e7450a285173431b3e52c5c25299e473"
+  - AlgorithmId: sha256
+    Digest: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  EventSize: 4
+  Event: "00000000"
+- EventNum: 31
+  PCRIndex: 6
+  EventType: EV_SEPARATOR
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9069ca78e7450a285173431b3e52c5c25299e473"
+  - AlgorithmId: sha256
+    Digest: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+  EventSize: 4
+  Event: "00000000"
+- EventNum: 32
+  PCRIndex: 7
+  EventType: EV_EFI_VARIABLE_AUTHORITY
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d9e11cb8555f08e6c40ed3fa64385b08346b8ee8"
+  - AlgorithmId: sha256
+    Digest: "c35f40e7ee83a3b5ef976e82dac5481f1c6ec1b1677c3c9aab05d50eb4843878"
+  EventSize: 778
+  Event:
+    VariableName: d719b2cb-3d3a-4596-a3bc-dad00e67656f
+    UnicodeNameLength: 2
+    VariableDataLength: 742
+    UnicodeName: db
+    VariableData:
+    - SignatureOwner: 00000000-0000-0000-0000-000000000000
+      SignatureData: 308202d2308201ba020101300d06092a864886f70d01010b0500302f312d302b06035504030c244a616d657320426f74746f6d6c65792053656375726520426f6f7420526f6f74204b6579301e170d3136303231393230343231385a170d3236303231363230343231385a302f312d302b06035504030c244a616d657320426f74746f6d6c65792055454649204170706c69636174696f6e204b657930820122300d06092a864886f70d01010105000382010f003082010a0282010100aed704d45cfa00b6ee1fda8bad443b83be8ee123874cd5b5f6ceda444694c585ee712b2adfecfdbe1d6167a616e0f9f76f590d359cf3ee957a17b49da2044ab26c9ca5dec3f61017736f7c2bee17e8a4939f6b584da91ca0f800de7a54d85792dba1926c3c54d252f43b50d0a7c699c829d503ba27be1c387785129e5453615c48348a3250e014d6ee4ef76ba707eed48670c6b456281f3e99ba4a467ae214e45b61fdda9634aeb63093f5d7f04a31374f44a27bcb97c792dc081f49d06b09e0608b6d45c4fb2ff4cd85c75a8351bd46af49d73e7e09a586c326bb3553edbdf830f41a2e24aa0a6270399060088b8feb91732fb6204a2109ef501381cc058dff0203010001300d06092a864886f70d01010b05000382010100628dffc3ce744bb736d8b889d1298eb75d558a8a650c65596354c13911121933446eb9c1e7ba531c8cf99dd4d6b26e204866050fe596c7d8b37851dff216b71107c29a7930caac6bb75029ee6561c7f7374310a57cd0900711af43b401a943061cf5805ec75b7ac107919644efd2c7e2f53857e50f64f6a7104915d450ca516341cfcd6807bd85c1a48dd5591a06cdf5758aff42712fb27b916bb17b840df08465fd7f0796e67d2a1b9b69ef242534540c7f3b4eb65ef7a52b4df23c36981ab623d3b58eeb5f890d18a52ff46683912cdd7510863b1de972739a1dec222bdf2a7e05f1fbf659220c761bd3b1d822c8c957659c2e9e623a359257687958a29132
+- EventNum: 33
+  PCRIndex: 5
+  EventType: EV_EFI_GPT_EVENT
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "cae759fa2ee193a95f35d1cd855d88d1ecda58be"
+  - AlgorithmId: sha256
+    Digest: "6b2bede944a45c6cd90864c6640e8f4aa28ba5a82022cfdcfa136b4e3825e04e"
+  EventSize: 484
+  Event:
+    Header:
+      Signature: "EFI PART"
+      Revision: 0x10000
+      HeaderSize: 92
+      HeaderCRC32: 0xa69cb0b9
+      MyLBA: 0x1
+      AlternateLBA: 0xdf94baf
+      FirstUsableLBA: 0x22
+      LastUsableLBA: 0xdf94b8e
+      DiskGUID: c4835c82-7945-4eac-9e7e-aa1c78a848aa
+      PartitionEntryLBA: 0x2
+      NumberOfPartitionEntry: 128
+      SizeOfPartitionEntry: 128
+      PartitionEntryArrayCRC32: 0xfcf26ef0
+    NumberOfPartitions: 3
+    Partitions:
+    - PartitionTypeGUID: c12a7328-f81f-11d2-ba4b-00a0c93ec93b
+      UniquePartitionGUID: 835143a8-d07b-41be-9144-043abeec04ea
+      StartingLBA: 0x800
+      EndingLBA: 0xfa7ff
+      Attributes: 0x0
+      PartitionName: "EFI System"
+    - PartitionTypeGUID: 0657fd6d-a4ab-43c4-84e5-0933c84b4f4f
+      UniquePartitionGUID: d0e469c6-17fe-4eec-931a-313aacf12242
+      StartingLBA: 0xfa800
+      EndingLBA: 0x10fa7ff
+      Attributes: 0x0
+      PartitionName: "Linux swap"
+    - PartitionTypeGUID: 0fc63daf-8483-4772-8e79-3d69d8477de4
+      UniquePartitionGUID: 640f720e-bd38-4151-9414-12f122eaef94
+      StartingLBA: 0x10fa800
+      EndingLBA: 0xdf94b8e
+      Attributes: 0x0
+      PartitionName: "Linux filesystem"
+- EventNum: 34
+  PCRIndex: 4
+  EventType: EV_EFI_BOOT_SERVICES_APPLICATION
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "73da156f2cb1c130e43147fcd0349ed951caf2f1"
+  - AlgorithmId: sha256
+    Digest: "8a2b711e1a7382d2589acb2beba708d219fa075d2ef4c8539cf3b191ca7017c1"
+  EventSize: 158
+  Event:
+    ImageLocationInMemory: 0xbaec7018
+    ImageLengthInMemory: 1217632
+    ImageLinkTimeAddress: 0x0
+    LengthOfDevicePath: 126
+    DevicePath: '02010c00d041030a0000000001010600021f03120a000200ffff000004012a0001000000000800000000000000a00f0000000000a84351837bd0be419144043abeec04ea0202040434005c004500460049005c00640065006200690061006e005c007300680069006d007800360034002e0065006600690000007fff0400'
+- EventNum: 35
+  PCRIndex: 14
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "14b6c8a48285025699dee99a69c31bf6d5ac097c"
+  - AlgorithmId: sha256
+    Digest: "00bcb08487e47387442f48eb24640cda3b8f36e35cf15bad952e9a6e15c69557"
+  EventSize: 8
+  Event:
+    String: |-
+      "MokList\0"
+- EventNum: 36
+  PCRIndex: 14
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "525ff70d4cfa4b2c76a2e23fc4490797932bd3f2"
+  - AlgorithmId: sha256
+    Digest: "8d8a3aae50d5d25838c95c034aadce7b548c9a952eb7925e366eda537c59c3b0"
+  EventSize: 9
+  Event:
+    String: |-
+      "MokListX\0"
+- EventNum: 37
+  PCRIndex: 4
+  EventType: EV_EFI_BOOT_SERVICES_APPLICATION
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "2df679f19175b3a0e927b758b339e7f961c25f14"
+  - AlgorithmId: sha256
+    Digest: "bb52dd8a063a15b6786e77941c30ea8f98e991aa3840a88e4eed41f6582b335a"
+  EventSize: 88
+  Event:
+    ImageLocationInMemory: 0xbac1d018
+    ImageLengthInMemory: 1660272
+    ImageLinkTimeAddress: 0x0
+    LengthOfDevicePath: 56
+    DevicePath: '040434005c004500460049005c00640065006200690061006e005c0067007200750062007800360034002e0065006600690000007fff0400'
+- EventNum: 38
+  PCRIndex: 7
+  EventType: EV_EFI_VARIABLE_AUTHORITY
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "2b136a029d25afc5efc9d6ac0d846fd5ca26d1d9"
+  - AlgorithmId: sha256
+    Digest: "e8a2574f70a48372a9d05d0f02f7db859c145db373beae9690a9429ef5c05708"
+  EventSize: 970
+  Event:
+    VariableName: 605dab50-e046-4300-abb6-3dd810dd8b23
+    UnicodeNameLength: 4
+    VariableDataLength: 930
+    UnicodeName: Shim
+    VariableData:
+    - SignatureOwner: 9e038230-8230-8602-a003-020102021100
+      SignatureData: ed54a1d5af8748948d9f8932ee9c7c34300d06092a864886f70d01010b05003020311e301c0603550403131544656269616e2053656375726520426f6f74204341301e170d3136303831363138303931385a170d3436303830393138303931385a3020311e301c0603550403131544656269616e2053656375726520426f6f7420434130820122300d06092a864886f70d01010105000382010f003082010a02820101009d95d48b9bda10ac2eca8237c1a4cb4ac31b4293c27a29d36edd64af80afea66a21b619c830cc56bb93525ffc5fbe82943dece4b3dc6124db1ef26439568cd0411fec2249bde14d88651e83843bdb19a15e5086bf854508bb34b5ffc14e435507c0bb1e20384a83648e480e8ea9ffabfc5187b5ece1cbe2c8078493515c021cfef66d58a96082b662f4817b1e7ec828f07e6cae05f712439500a8ed1722850a59d21f4e361ba090366c8df4e26360b150f631f2bafabc428a25664858da65541ae3c8895ddd06dd929dbd8c468b5fcf457896b14dbe0efee400d621fea58d4a3d8ba03a6972ec56b13a49177a6b5ad23a7eb0a4914467c76e99e32b489af57790203010001a381d23081cf304106082b0601050507010104353033303106082b06010505073002862568747470733a2f2f6473612e64656269616e2e6f72672f7365637572652d626f6f742d6361301f0603551d230418301680146ccece7e4c6c0d1f6149f3dd27dfcc5cbb419ea1301406096086480186f84201010101ff0404030200f730130603551d25040c300a06082b06010505070303300e0603551d0f0101ff040403020186300f0603551d130101ff040530030101ff301d0603551d0e041604146ccece7e4c6c0d1f6149f3dd27dfcc5cbb419ea1300d06092a864886f70d01010b0500038201010077963e47c9ce09cf8b89ce59ed260e260bb9ada92bbda1eb887902ff31defef56a07ef611311701ebf9c4e666ce162129701576547dd4ac6f7f4dea8f11362cc8357ac3ca69115af552672692e14cddd4db3d160242d324f196c115ef2a3f2a15f620f30aeadf14866647d36440d06343d2eaf8e9dc3adc291d837e0ee7a5f823b678e008ac4a4df3516c2722b4c51d793939eba080d5997f2e229a0444deaeef83e0260ca15cf4e9a2591843fb75ac7eebc6b80a3d9fdb26d7a1e6314ebeff1b04025d5e80e81eb6bf7cbffe52100222c2e9a3560124b5b5f3846840c069ccf72936218ee5c98d6b37d06253995df4e6076b0067b08b06ee3649f2156ad390f
+- EventNum: 39
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "74e3a78376612435f50b33a6fe61298bd9c3f29c"
+  - AlgorithmId: sha256
+    Digest: "7a20149896d45c7437abe801dff282eb704707c480b6124f700b0be6f316a549"
+  EventSize: 31
+  Event:
+    String: |-
+      "(hd0,gpt1)/EFI/debian/grub.cfg\0"
+- EventNum: 40
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "815cca5d500f0f14855959b0bbf1f55bacd1e04e"
+  - AlgorithmId: sha256
+    Digest: "7279615adfa53aa4395e79bae3559e72853ffb068a3109751e1b40aa362ce2f6"
+  EventSize: 76
+  Event:
+    String: |-
+      "grub_cmd: search.fs_uuid d4b018ac-5304-4aac-b870-4060a39e2af1 root hd0,gpt3\0"
+- EventNum: 41
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "0e8967df8f7833ec60fae5dae4627ef9aff2c9d2"
+  - AlgorithmId: sha256
+    Digest: "cf7bce8278803c27e612fcc9cf071bfa5195cd48dd27e99250a56b7b08507f50"
+  EventSize: 42
+  Event:
+    String: |-
+      "grub_cmd: set prefix=(hd0,gpt3)/boot/grub\0"
+- EventNum: 42
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "6030ad5f514fa4dc52c3d665ef48e2f09fe9476a"
+  - AlgorithmId: sha256
+    Digest: "cf0d1fdf5e643de858180bc14fdee135944e615c20dfff56d027d3f15f0c12ae"
+  EventSize: 44
+  Event:
+    String: |-
+      "(hd0,gpt3)/boot/grub/x86_64-efi/command.lst\0"
+- EventNum: 43
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f091655c7ac7314eb0df21931415de47628d621f"
+  - AlgorithmId: sha256
+    Digest: "32fc7f5de8c0a5dc0b1e7eb609ca31a77eb3475539e1d97a4543dca1b9b26c57"
+  EventSize: 39
+  Event:
+    String: |-
+      "(hd0,gpt3)/boot/grub/x86_64-efi/fs.lst\0"
+- EventNum: 44
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "ff00d28114398cf1a052329494d63aceeb8ff29a"
+  - AlgorithmId: sha256
+    Digest: "1b766f38a94927fe9b7bc1e809f0363e778e14c601e800faea271a2e75d3fc43"
+  EventSize: 43
+  Event:
+    String: |-
+      "(hd0,gpt3)/boot/grub/x86_64-efi/crypto.lst\0"
+- EventNum: 45
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "66b726c6d64bc109d3948a9528f502ea94938ef4"
+  - AlgorithmId: sha256
+    Digest: "46f888c52f36baf9b62d60bc8d06426a314aad5a0ff86a4362a91c2512a1df9c"
+  EventSize: 45
+  Event:
+    String: |-
+      "(hd0,gpt3)/boot/grub/x86_64-efi/terminal.lst\0"
+- EventNum: 46
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "bc40715abe31cbdc7378e0ae1e8d3b31202737a8"
+  - AlgorithmId: sha256
+    Digest: "741e67f6543075bae0263dbc027b04fa5c073804392dd25126aae488ebc6aa31"
+  EventSize: 51
+  Event:
+    String: |-
+      "grub_cmd: configfile (hd0,gpt3)/boot/grub/grub.cfg\0"
+- EventNum: 47
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "cc9fc5e33998ee32e84798eff73c52f5908e6ca2"
+  - AlgorithmId: sha256
+    Digest: "0b59a9f9d61e98e1e79ac63bc858ad340b8e1f02a29bc8b99f5788491cf10e0d"
+  EventSize: 30
+  Event:
+    String: |-
+      "(hd0,gpt3)/boot/grub/grub.cfg\0"
+- EventNum: 48
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "62b0aeeb03a29fbebcccc87d62a7d265412da240"
+  - AlgorithmId: sha256
+    Digest: "889b43f6ecb6c531e6df49ec3017c2f81d02d37d5a66bab411b48c5792fa4d4e"
+  EventSize: 46
+  Event:
+    String: |-
+      "grub_cmd: [ -s (hd0,gpt3)/boot/grub/grubenv ]\0"
+- EventNum: 49
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "b27ebe55858f31979b645a4244b55e6efadb4dae"
+  - AlgorithmId: sha256
+    Digest: "2e4234c851ddf251b0ffc935ee1db96b7befd4f2df869a5612e282de04c23fc0"
+  EventSize: 29
+  Event:
+    String: |-
+      "(hd0,gpt3)/boot/grub/grubenv\0"
+- EventNum: 50
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "3c4e9b1198ecc160aff6022c0f96b5b22fab1469"
+  - AlgorithmId: sha256
+    Digest: "0e3a17e0c48e42d79f4d1576e7f787c911239510586505c326143b9b268bdd65"
+  EventSize: 32
+  Event:
+    String: |-
+      "grub_cmd: set have_grubenv=true\0"
+- EventNum: 51
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "453dee6ce82bd80ea89bd8085724ae9784ff0f1b"
+  - AlgorithmId: sha256
+    Digest: "f8b99f77983990e8804864cade91f361b5b6600cc2832febaef878ac8b44d27e"
+  EventSize: 19
+  Event:
+    String: |-
+      "grub_cmd: load_env\0"
+- EventNum: 52
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "b27ebe55858f31979b645a4244b55e6efadb4dae"
+  - AlgorithmId: sha256
+    Digest: "2e4234c851ddf251b0ffc935ee1db96b7befd4f2df869a5612e282de04c23fc0"
+  EventSize: 29
+  Event:
+    String: |-
+      "(hd0,gpt3)/boot/grub/grubenv\0"
+- EventNum: 53
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "710cbf237c9abd071ca91c4104324800bec7b0fb"
+  - AlgorithmId: sha256
+    Digest: "ce8124bc1b0fbc0cb5cd47338ca0c7d5f5446d79936e443a201d96b192a7bd65"
+  EventSize: 15
+  Event:
+    String: |-
+      "grub_cmd: [  ]\0"
+- EventNum: 54
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "75409120452bbbee30abe289af973ecdd7e0ef6b"
+  - AlgorithmId: sha256
+    Digest: "3a118940bf2675007df3368cb6d45cf2756f328d3e75daf69a971dd21bd1bc58"
+  EventSize: 24
+  Event:
+    String: |-
+      "grub_cmd: set default=0\0"
+- EventNum: 55
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+  - AlgorithmId: sha256
+    Digest: "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+  EventSize: 22
+  Event:
+    String: |-
+      "grub_cmd: [ xy = xy ]\0"
+- EventNum: 56
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "bd5209e50c09650ffcf5c2d12a8be8277e438023"
+  - AlgorithmId: sha256
+    Digest: "09f17d4dfb4b97f16246632c21b1ac2125c95c148899eee5069fbb1b34365513"
+  EventSize: 35
+  Event:
+    String: |-
+      "grub_cmd: menuentry_id_option=--id\0"
+- EventNum: 57
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "6248599bae0d78ccbda185ed2fce0182ed41e297"
+  - AlgorithmId: sha256
+    Digest: "4af0bb370c9e3b7982027d02e04c935e32d52b528007476bfc50d36d1b86815e"
+  EventSize: 37
+  Event:
+    String: |-
+      "grub_cmd: export menuentry_id_option\0"
+- EventNum: 58
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "710cbf237c9abd071ca91c4104324800bec7b0fb"
+  - AlgorithmId: sha256
+    Digest: "ce8124bc1b0fbc0cb5cd47338ca0c7d5f5446d79936e443a201d96b192a7bd65"
+  EventSize: 15
+  Event:
+    String: |-
+      "grub_cmd: [  ]\0"
+- EventNum: 59
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+  - AlgorithmId: sha256
+    Digest: "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+  EventSize: 22
+  Event:
+    String: |-
+      "grub_cmd: [ xy = xy ]\0"
+- EventNum: 60
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "7696e7ec08ba2c2481738b8c36e1783a88ee8b97"
+  - AlgorithmId: sha256
+    Digest: "b73bf83aa3e5f0050ef97ee880d0fd31e4f62c41807e4a51044ba2ab39b733ba"
+  EventSize: 23
+  Event:
+    String: |-
+      "grub_cmd: font=unicode\0"
+- EventNum: 61
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "fe26af473c0ca032676dd38aab9099888fd5c4a4"
+  - AlgorithmId: sha256
+    Digest: "fbf985ea9a6a7e3dbdf34b5eeec6a14d69de9460a90c9d884b9a6d38fcac847d"
+  EventSize: 27
+  Event:
+    String: |-
+      "grub_cmd: loadfont unicode\0"
+- EventNum: 62
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "97710be4d2de4722630b44c07bc140d82d50cc6d"
+  - AlgorithmId: sha256
+    Digest: "668b315729c39ad5f0a0b59f870b607776edeb425481b70a1de01b0a19c12e2d"
+  EventSize: 39
+  Event:
+    String: |-
+      "(hd0,gpt3)/boot/grub/fonts/unicode.pf2\0"
+- EventNum: 63
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "ab459561bc9e5982432c09b0e6af55be9649fff7"
+  - AlgorithmId: sha256
+    Digest: "0e67e3f8d46db41448660d2d0728fa4f60df231ee9c3b554b31da0b5b736006b"
+  EventSize: 27
+  Event:
+    String: |-
+      "grub_cmd: set gfxmode=auto\0"
+- EventNum: 64
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "8fe59e66d6ec198420477f24f791e929f153e144"
+  - AlgorithmId: sha256
+    Digest: "7626abd8be7442c2e575364a3e95cb3a3b533c58afbba402d2bdabdff85d29c7"
+  EventSize: 21
+  Event:
+    String: |-
+      "grub_cmd: load_video\0"
+- EventNum: 65
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+  - AlgorithmId: sha256
+    Digest: "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+  EventSize: 22
+  Event:
+    String: |-
+      "grub_cmd: [ xy = xy ]\0"
+- EventNum: 66
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "59ced343b060b7df54fa7ba251ef877940601ee4"
+  - AlgorithmId: sha256
+    Digest: "d71353f5368eb2c1280590928128979bd96ea8db1e8c81493f7878383b76ab3b"
+  EventSize: 27
+  Event:
+    String: |-
+      "grub_cmd: insmod all_video\0"
+- EventNum: 67
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "c37fe4ce4a96aacc3b7ec933a0303ddf1cf2cecc"
+  - AlgorithmId: sha256
+    Digest: "82585929bcc1f531b83edb077a09855658f2098cdd90c86dcb506c71a3171b4e"
+  EventSize: 25
+  Event:
+    String: |-
+      "grub_cmd: insmod gfxterm\0"
+- EventNum: 68
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "95343ee70d1dfbac14e0dd741abb0e84206a5298"
+  - AlgorithmId: sha256
+    Digest: "f22171d32f9645706e8b7456c4814696dfac804502cf1e40a435e456a995209e"
+  EventSize: 53
+  Event:
+    String: |-
+      "grub_cmd: set locale_dir=(hd0,gpt3)/boot/grub/locale\0"
+- EventNum: 69
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f6533507d89fd0d6ae6c04ed4fe5bc9a1d11ae06"
+  - AlgorithmId: sha256
+    Digest: "37ea6a93fd7fe5be94df95ca82591692fe57d899eb3ca205811becc8ca110a6e"
+  EventSize: 25
+  Event:
+    String: |-
+      "grub_cmd: set lang=en_US\0"
+- EventNum: 70
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d4d154ea763cf0becca398e32dc0e884e6d5355c"
+  - AlgorithmId: sha256
+    Digest: "ac72f5f623d472a31f70152b2adcb310e0b8c17297ff2529089ba3a23714ab2f"
+  EventSize: 25
+  Event:
+    String: |-
+      "grub_cmd: insmod gettext\0"
+- EventNum: 71
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "381c5267802343627f6369736e8e12fd37c885a3"
+  - AlgorithmId: sha256
+    Digest: "3f3dc8a0440e436b26894efbc4052f74be22c098ec044145a058705d9dd02c1b"
+  EventSize: 34
+  Event:
+    String: |-
+      "grub_cmd: terminal_output gfxterm\0"
+- EventNum: 72
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "05ba452bf00b7f880528b35d02e9077f89c08538"
+  - AlgorithmId: sha256
+    Digest: "82a4a14e43a4f76118ae63285d0af05af139f260fae57b2c20737a1c1df3382b"
+  EventSize: 19
+  Event:
+    String: |-
+      "grub_cmd: [  = 1 ]\0"
+- EventNum: 73
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+  - AlgorithmId: sha256
+    Digest: "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+  EventSize: 22
+  Event:
+    String: |-
+      "grub_cmd: [ xy = xy ]\0"
+- EventNum: 74
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "c512092b0481234caa416ef7c196ab4e92b8e002"
+  - AlgorithmId: sha256
+    Digest: "1c568398cf2e4a9df58875bbd79dffe058ec45be0b74512fa919a2fe7db4a609"
+  EventSize: 33
+  Event:
+    String: |-
+      "grub_cmd: set timeout_style=menu\0"
+- EventNum: 75
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "732c713a6f4c3a388ee1b46624b7c3fe34d59d50"
+  - AlgorithmId: sha256
+    Digest: "71a5b3b21ac3862f40fabb745a9649c3a1d34249b9706524c90b2480c298beb0"
+  EventSize: 24
+  Event:
+    String: |-
+      "grub_cmd: set timeout=5\0"
+- EventNum: 76
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "4569e1b66d9694094e29c3c3bfffe21290883a3c"
+  - AlgorithmId: sha256
+    Digest: "1dc74b4e48fdf35aa7f5bb97af595a6a4da6b0627fe8d4f364600ed479301f87"
+  EventSize: 42
+  Event:
+    String: |-
+      "grub_cmd: set menu_color_normal=cyan/blue\0"
+- EventNum: 77
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "4b2c1984b33d7198181fda7452653833b2f8269c"
+  - AlgorithmId: sha256
+    Digest: "a8defc27d7519a4732c283b407e736fd9366ebb0ac88d7161d6d918cc0d34d4c"
+  EventSize: 46
+  Event:
+    String: |-
+      "grub_cmd: set menu_color_highlight=white/blue\0"
+- EventNum: 78
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "44e779963e864f02eb88cc885809b6852859b823"
+  - AlgorithmId: sha256
+    Digest: "6f95c10338c5bd95c150247491b336482d658678b865179446bfc69306bdbb5c"
+  EventSize: 30
+  Event:
+    String: |-
+      "grub_cmd: set linux_gfx_mode=\0"
+- EventNum: 79
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "9deef0fa444e59d7a08e615f25628826e7feddf9"
+  - AlgorithmId: sha256
+    Digest: "22e041251eb54eeb3270245759aa3e8bd3b77a647db988b681b1eafc6960aa45"
+  EventSize: 32
+  Event:
+    String: |-
+      "grub_cmd: export linux_gfx_mode\0"
+- EventNum: 80
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "d1e435d67a94222559eff8ebc33037cb84e029e5"
+  - AlgorithmId: sha256
+    Digest: "15af0dbc895199e3ab6677d04b94d8b93133f62916ffd7c2c3cab1ccce1fde92"
+  EventSize: 796
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux --class debian --class gnu-linux --class gnu --class os --id gnulinux-simple-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\tload_video"
+      "\tinsmod gzio"
+      "\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\tinsmod part_gpt"
+      "\tinsmod ext2"
+      "\tset root=\'hd0,gpt3\'"
+      "\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\telse"
+      "\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\tfi"
+      "\techo\t\'Loading Linux 5.10.0-rc1+ ...\'"
+      "\tlinuxefi\t/boot/vmlinuz-5.10.0-rc1+ root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro  quiet"
+      "\techo\t\'Loading initial ramdisk ...\'"
+      "\tinitrdefi\t/boot/initrd.img-5.10.0-rc1+"
+      "}\0"
+- EventNum: 81
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "807a7ee2494cebf8a4b63d6603b913048d33cb49"
+  - AlgorithmId: sha256
+    Digest: "14e161c158faeef56d7aa668d00c9aff4f30738ccfd281daa1732e50290b9e45"
+  EventSize: 8609
+  Event:
+    String: |-
+      "grub_cmd: submenu Advanced options for Debian GNU/Linux --id gnulinux-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.10.0-rc1+\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.10.0-rc1+-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.10.0-rc1+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.10.0-rc1+ root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro  quiet"
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.10.0-rc1+"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.10.0-rc1+ (recovery mode)\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.10.0-rc1+-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.10.0-rc1+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.10.0-rc1+ root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro single "
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.10.0-rc1+"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.10-rc1+\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.10-rc1+-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.10-rc1+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.10-rc1+ root=/dev/sda3 ro  quiet"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.10-rc1+ (recovery mode)\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.10-rc1+-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.10-rc1+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.10-rc1+ root=/dev/sda3 ro single "
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.9.0-1-amd64\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.9.0-1-amd64-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.9.0-1-amd64 ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.9.0-1-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro  quiet"
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.9.0-1-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.9.0-1-amd64 (recovery mode)\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.9.0-1-amd64-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.9.0-1-amd64 ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.9.0-1-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro single "
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.9.0-1-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.9.0-rc6+\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.9.0-rc6+-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.9.0-rc6+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.9.0-rc6+ root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro  quiet"
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.9.0-rc6+"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.9.0-rc6+ (recovery mode)\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.9.0-rc6+-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.9.0-rc6+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.9.0-rc6+ root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro single "
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.9.0-rc6+"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.8.0-2-amd64\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.8.0-2-amd64-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.8.0-2-amd64 ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.8.0-2-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro  quiet"
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.8.0-2-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 5.8.0-2-amd64 (recovery mode)\' --class debian --class gnu-linux --class gnu --class os $menuentry_id_option \'gnulinux-5.8.0-2-amd64-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1\' {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.8.0-2-amd64 ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.8.0-2-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro single "
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.8.0-2-amd64"
+      "\t}"
+      "}\0"
+- EventNum: 82
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "a7078976d1d6f39ea8db75322c5d9d3883ea12ef"
+  - AlgorithmId: sha256
+    Digest: "f6eca372fdbe39aac63b4b3ec5610a93196904d9cd17bc3b20a8b412b1062620"
+  EventSize: 671
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux 10 (buster) (on /dev/sdb2) --class debian --class gnu-linux --class gnu --class os --id osprober-gnulinux-simple-1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 {"
+      "\tinsmod part_gpt"
+      "\tinsmod ext2"
+      "\tset root=\'hd1,gpt2\'"
+      "\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\telse"
+      "\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\tfi"
+      "\tlinuxefi /boot/vmlinuz-test root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed"
+      "\tinitrdefi /boot/initrd.img-test"
+      "}\0"
+- EventNum: 83
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "196d076b14b9f0a56c013d2d96e52c5dca606d93"
+  - AlgorithmId: sha256
+    Digest: "f85608f1cfd8222ae8dd7b70ab415c1c24ab5fe9ab56c5374065c8a0492186d9"
+  EventSize: 9999
+  Event:
+    String: |-
+      "grub_cmd: submenu Advanced options for Debian GNU/Linux 10 (buster) (on /dev/sdb2) --id osprober-gnulinux-advanced-1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 {"
+      "\tmenuentry \'Debian GNU/Linux (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-test--1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-test root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed"
+      "\t\tinitrdefi /boot/initrd.img-test"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux test (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-test--1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-test root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed"
+      "\t\tinitrdefi /boot/initrd.img-test"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux test (sysvinit) (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-test--1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-test root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed init=/lib/sysvinit/init"
+      "\t\tinitrdefi /boot/initrd.img-test"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux test (recovery mode) (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-test-root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro single console=tty0-1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-test root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro single console=tty0"
+      "\t\tinitrdefi /boot/initrd.img-test"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 4.19.0-5-amd64 (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-4.19.0-5-amd64--1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-4.19.0-5-amd64 root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed"
+      "\t\tinitrdefi /boot/initrd.img-4.19.0-5-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 4.19.0-5-amd64 (sysvinit) (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-4.19.0-5-amd64--1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-4.19.0-5-amd64 root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed init=/lib/sysvinit/init"
+      "\t\tinitrdefi /boot/initrd.img-4.19.0-5-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 4.19.0-5-amd64 (recovery mode) (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-4.19.0-5-amd64-root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro single console=tty0-1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-4.19.0-5-amd64 root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro single console=tty0"
+      "\t\tinitrdefi /boot/initrd.img-4.19.0-5-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 4.19.0-4-amd64 (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-4.19.0-4-amd64--1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-4.19.0-4-amd64 root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed"
+      "\t\tinitrdefi /boot/initrd.img-4.19.0-4-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 4.19.0-4-amd64 (sysvinit) (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-4.19.0-4-amd64--1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-4.19.0-4-amd64 root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed init=/lib/sysvinit/init"
+      "\t\tinitrdefi /boot/initrd.img-4.19.0-4-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 4.19.0-4-amd64 (recovery mode) (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-4.19.0-4-amd64-root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro single console=tty0-1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-4.19.0-4-amd64 root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro single console=tty0"
+      "\t\tinitrdefi /boot/initrd.img-4.19.0-4-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 4.19.0-1-amd64 (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-4.19.0-1-amd64--1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-4.19.0-1-amd64 root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed"
+      "\t\tinitrdefi /boot/initrd.img-4.19.0-1-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 4.19.0-1-amd64 (sysvinit) (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-4.19.0-1-amd64--1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-4.19.0-1-amd64 root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro console=tty0 iomem=relaxed init=/lib/sysvinit/init"
+      "\t\tinitrdefi /boot/initrd.img-4.19.0-1-amd64"
+      "\t}"
+      "\tmenuentry \'Debian GNU/Linux, with Linux 4.19.0-1-amd64 (recovery mode) (on /dev/sdb2)\' --class gnu-linux --class gnu --class os $menuentry_id_option \'osprober-gnulinux-/boot/vmlinuz-4.19.0-1-amd64-root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro single console=tty0-1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3\' {"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd1,gpt2\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd1,gpt2 --hint-efi=hd1,gpt2 --hint-baremetal=ahci1,gpt2  1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root 1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3"
+      "\t\tfi"
+      "\t\tlinuxefi /boot/vmlinuz-4.19.0-1-amd64 root=UUID=1d0a69ec-9f6b-4fbb-99d4-b52fa29239a3 ro single console=tty0"
+      "\t\tinitrdefi /boot/initrd.img-4.19.0-1-amd64"
+      "\t}"
+      "}\0"
+- EventNum: 84
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "5c0a96ef049cefa84b2b0a910b36842400afdc7d"
+  - AlgorithmId: sha256
+    Digest: "dd4f092d0514e2bfa282fd78882e6012f9ea5c56d4b35d5e555b3016534b9db9"
+  EventSize: 65
+  Event:
+    String: |-
+      "grub_cmd: menuentry System setup --id uefi-firmware {"
+      "\tfwsetup"
+      "}\0"
+- EventNum: 85
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "5dc2b3a457e112451152def2fe96dfd55f643954"
+  - AlgorithmId: sha256
+    Digest: "c622e619d7b1f7b6e042b3840c24667852990d23afc5e95b72c3e00a4ae63bcd"
+  EventSize: 49
+  Event:
+    String: |-
+      "grub_cmd: [ -f (hd0,gpt3)/boot/grub/custom.cfg ]\0"
+- EventNum: 86
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "112f6a493092faea744618cb1d8122b9fa925696"
+  - AlgorithmId: sha256
+    Digest: "d4da65c3b8f3bef215a88318c9c1dbc9592b77825a169de79b456d0601be1249"
+  EventSize: 76
+  Event:
+    String: |-
+      "grub_cmd: [ -z (hd0,gpt3)/boot/grub -a -f (hd0,gpt3)/boot/grub/custom.cfg ]\0"
+- EventNum: 87
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "ab6ac0c9cbf2b9ee659f1e131625e5bb7791e016"
+  - AlgorithmId: sha256
+    Digest: "2edcaf5b4e3c0b2b6addce15ba80c9ff5fe68eca178904abcf0933380ee74049"
+  EventSize: 58
+  Event:
+    String: |-
+      "grub_cmd: setparams Advanced options for Debian GNU/Linux\0"
+- EventNum: 88
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "7747b9a4283dd908249a4082335dfd47ccda16a0"
+  - AlgorithmId: sha256
+    Digest: "1ace67334e4884ddd005506dfc78f4a6fa9ba1be2db791f3e79c6e393f44f280"
+  EventSize: 850
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.10.0-rc1+ --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.10.0-rc1+-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.10.0-rc1+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.10.0-rc1+ root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro  quiet"
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.10.0-rc1+"
+      "\t}\0"
+- EventNum: 89
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f361e14305a0090df83094435d86151a35b3f982"
+  - AlgorithmId: sha256
+    Digest: "4c1a76ab1478560d215fe0b4bffa6175447f34bb0699525d64e3890c9a5366c8"
+  EventSize: 867
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.10.0-rc1+ (recovery mode) --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.10.0-rc1+-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.10.0-rc1+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.10.0-rc1+ root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro single "
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.10.0-rc1+"
+      "\t}\0"
+- EventNum: 90
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "4f3efb206d79d37b6a03e9e732b679e32323e20c"
+  - AlgorithmId: sha256
+    Digest: "3595cea351423a7cb9a17a87e5f8d1d68cf568dc149e8268d4320391e31b8030"
+  EventSize: 732
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.10-rc1+ --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.10-rc1+-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.10-rc1+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.10-rc1+ root=/dev/sda3 ro  quiet"
+      "\t}\0"
+- EventNum: 91
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "0147a82bf7a919ee3f9a0df42cd87ebfe54c7507"
+  - AlgorithmId: sha256
+    Digest: "e47f17d1071d4062d5298fd9de5d6824db398330ebb21eb8bdaacbf32adf6bb7"
+  EventSize: 749
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.10-rc1+ (recovery mode) --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.10-rc1+-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.10-rc1+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.10-rc1+ root=/dev/sda3 ro single "
+      "\t}\0"
+- EventNum: 92
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "e6e0fa725052fc6b81d685a4870d9f60e9e08ed0"
+  - AlgorithmId: sha256
+    Digest: "bc7ab2eede854a42d6acf6f5ec5c774974306ff92edcbc212e9f66441a73983c"
+  EventSize: 860
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.9.0-1-amd64 --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.9.0-1-amd64-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.9.0-1-amd64 ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.9.0-1-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro  quiet"
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.9.0-1-amd64"
+      "\t}\0"
+- EventNum: 93
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "53c29ac5aceaa924b61395d5cbb1e246c9de2c80"
+  - AlgorithmId: sha256
+    Digest: "96c6c3ca2f08235cd2913eed5b2f77957a1134df0fc7d67e2a81b5aa36103bb8"
+  EventSize: 877
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.9.0-1-amd64 (recovery mode) --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.9.0-1-amd64-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.9.0-1-amd64 ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.9.0-1-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro single "
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.9.0-1-amd64"
+      "\t}\0"
+- EventNum: 94
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "ee0e7f958708f10fa91dae2ed692ca87611a514e"
+  - AlgorithmId: sha256
+    Digest: "949a6a206f7aa71882a45acc11bd4329b00dadf5e850199e1e8f87a56f5e5e86"
+  EventSize: 845
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.9.0-rc6+ --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.9.0-rc6+-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.9.0-rc6+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.9.0-rc6+ root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro  quiet"
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.9.0-rc6+"
+      "\t}\0"
+- EventNum: 95
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "8b6b787681a5746128e8a55d2d652489309eada0"
+  - AlgorithmId: sha256
+    Digest: "a86a394b09ed360f0860c7daea0d6fd91734a33b1579789c5c20df5cfedd8622"
+  EventSize: 862
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.9.0-rc6+ (recovery mode) --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.9.0-rc6+-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.9.0-rc6+ ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.9.0-rc6+ root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro single "
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.9.0-rc6+"
+      "\t}\0"
+- EventNum: 96
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "39b9856fb02a175c01b5e96ee1ae56bcfbe4e6c6"
+  - AlgorithmId: sha256
+    Digest: "5e058e4774aff82417141745bdf1af0edb1919c5ca16d46a355da3447e00d4bd"
+  EventSize: 860
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.8.0-2-amd64 --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.8.0-2-amd64-advanced-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.8.0-2-amd64 ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.8.0-2-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro  quiet"
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.8.0-2-amd64"
+      "\t}\0"
+- EventNum: 97
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "72cf89df42a5270ff4a0556265b876f5fd9d1bde"
+  - AlgorithmId: sha256
+    Digest: "e387ee8bc55b48b2afe6417577ab4c472cb2f33f8476a2a0522662ea1fab574b"
+  EventSize: 877
+  Event:
+    String: |-
+      "grub_cmd: menuentry Debian GNU/Linux, with Linux 5.8.0-2-amd64 (recovery mode) --class debian --class gnu-linux --class gnu --class os --id gnulinux-5.8.0-2-amd64-recovery-d4b018ac-5304-4aac-b870-4060a39e2af1 {"
+      "\t\tload_video"
+      "\t\tinsmod gzio"
+      "\t\tif [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi"
+      "\t\tinsmod part_gpt"
+      "\t\tinsmod ext2"
+      "\t\tset root=\'hd0,gpt3\'"
+      "\t\tif [ x$feature_platform_search_hint = xy ]; then"
+      "\t\t  search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3  d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\telse"
+      "\t\t  search --no-floppy --fs-uuid --set=root d4b018ac-5304-4aac-b870-4060a39e2af1"
+      "\t\tfi"
+      "\t\techo\t\'Loading Linux 5.8.0-2-amd64 ...\'"
+      "\t\tlinuxefi\t/boot/vmlinuz-5.8.0-2-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro single "
+      "\t\techo\t\'Loading initial ramdisk ...\'"
+      "\t\tinitrdefi\t/boot/initrd.img-5.8.0-2-amd64"
+      "\t}\0"
+- EventNum: 98
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "86aef6f2d6be922d4dc6727c624a74ae6734e01e"
+  - AlgorithmId: sha256
+    Digest: "d53b5bee0be51dbd8d8b402c2f387f41e5adda081000726651a3161627857fd0"
+  EventSize: 63
+  Event:
+    String: |-
+      "grub_cmd: setparams Debian GNU/Linux, with Linux 5.9.0-1-amd64\0"
+- EventNum: 99
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "8fe59e66d6ec198420477f24f791e929f153e144"
+  - AlgorithmId: sha256
+    Digest: "7626abd8be7442c2e575364a3e95cb3a3b533c58afbba402d2bdabdff85d29c7"
+  EventSize: 21
+  Event:
+    String: |-
+      "grub_cmd: load_video\0"
+- EventNum: 100
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+  - AlgorithmId: sha256
+    Digest: "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+  EventSize: 22
+  Event:
+    String: |-
+      "grub_cmd: [ xy = xy ]\0"
+- EventNum: 101
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "59ced343b060b7df54fa7ba251ef877940601ee4"
+  - AlgorithmId: sha256
+    Digest: "d71353f5368eb2c1280590928128979bd96ea8db1e8c81493f7878383b76ab3b"
+  EventSize: 27
+  Event:
+    String: |-
+      "grub_cmd: insmod all_video\0"
+- EventNum: 102
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "ba509ca38210f0683c477c9dc40e4c4f653e1dfb"
+  - AlgorithmId: sha256
+    Digest: "6c4674d4c652ee67b98a6206d7541ccbf2d5dc0a18dae31ad66e82c794c49784"
+  EventSize: 22
+  Event:
+    String: |-
+      "grub_cmd: insmod gzio\0"
+- EventNum: 103
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "2de845dce8a51c8fddbaa04686760093325b7569"
+  - AlgorithmId: sha256
+    Digest: "18865468f2e4bd9f0cc4ffdda1335f405d06df8d6ff183b373f50e08e81f924d"
+  EventSize: 26
+  Event:
+    String: |-
+      "grub_cmd: [ xefi = xxen ]\0"
+- EventNum: 104
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "a4e1c6f50579b47c964111d1ea2170e6f923c941"
+  - AlgorithmId: sha256
+    Digest: "62cd76d31ca3d10d742e46c6ff171046ce19dd90f361a827fec6571e59c24794"
+  EventSize: 26
+  Event:
+    String: |-
+      "grub_cmd: insmod part_gpt\0"
+- EventNum: 105
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "af3f07abac9e5c56b82f09ab98328905aabbf6ef"
+  - AlgorithmId: sha256
+    Digest: "b838a4d2860c81058105fbb1907a1fb7f60b65591b099b3b000d9b31d8d2fb20"
+  EventSize: 22
+  Event:
+    String: |-
+      "grub_cmd: insmod ext2\0"
+- EventNum: 106
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "df6a674080a021bde742f20dfea4b268cd981552"
+  - AlgorithmId: sha256
+    Digest: "6de12d261bb15ff6c8e95ce15b0d2196489c4b13842ebe58211ba8f3f24d901f"
+  EventSize: 28
+  Event:
+    String: |-
+      "grub_cmd: set root=hd0,gpt3\0"
+- EventNum: 107
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "f5b067e59c163f67b19b836fbee9e8a487a19cdd"
+  - AlgorithmId: sha256
+    Digest: "4568361fb7581b31a42d645ab534302fb9f742adaa37b7fde152215d69e259fb"
+  EventSize: 22
+  Event:
+    String: |-
+      "grub_cmd: [ xy = xy ]\0"
+- EventNum: 108
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "e28e7c5a0d7aeb34575e7594b61bb0b6edb40c42"
+  - AlgorithmId: sha256
+    Digest: "2b61bf5ff20f90d6cd9d58366b015e823041e8d3cfc30134f682e60781a5a149"
+  EventSize: 156
+  Event:
+    String: |-
+      "grub_cmd: search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt3 --hint-efi=hd0,gpt3 --hint-baremetal=ahci0,gpt3 d4b018ac-5304-4aac-b870-4060a39e2af1\0"
+- EventNum: 109
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "e0895e6e5f427428a20c86448b935c3f907e2d87"
+  - AlgorithmId: sha256
+    Digest: "bce5f5138cfdcab682f72fd85e98dc27a31bc660d21d0f08854b824681ecfecc"
+  EventSize: 47
+  Event:
+    String: |-
+      "grub_cmd: echo Loading Linux 5.9.0-1-amd64 ...\0"
+- EventNum: 110
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "5c31b82cd245f31ff3701ce90feb5a54bcb3d3af"
+  - AlgorithmId: sha256
+    Digest: "f75762c8e2f990a174e471dccc9cae8111cb045f0e71be2721e60ee8af249c22"
+  EventSize: 103
+  Event:
+    String: |-
+      "grub_cmd: linuxefi /boot/vmlinuz-5.9.0-1-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro quiet\0"
+- EventNum: 111
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "32d13a589f40336e746a92ee7569e809652a61fd"
+  - AlgorithmId: sha256
+    Digest: "3ac5605694e69aaa37f7723e9fabdf295421603b824db11247a4913f778d5131"
+  EventSize: 28
+  Event:
+    String: |-
+      "/boot/vmlinuz-5.9.0-1-amd64\0"
+- EventNum: 112
+  PCRIndex: 4
+  EventType: EV_EFI_BOOT_SERVICES_APPLICATION
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "17bb333a5c998e477147bad152faf00ac88da907"
+  - AlgorithmId: sha256
+    Digest: "529c651954bef58bd8bc44cff7909516a5e14b8edc2d720dee8c60b846f468a8"
+  EventSize: 32
+  Event:
+    ImageLocationInMemory: 0xaaa8a6c0
+    ImageLengthInMemory: 5738992
+    ImageLinkTimeAddress: 0x0
+    LengthOfDevicePath: 0
+    DevicePath: ''
+- EventNum: 113
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "0e0b91b54162bbd3de169f27ce13c938c575c3fa"
+  - AlgorithmId: sha256
+    Digest: "be9f86e77915a1b7f0e37e7582c44d268ac924f16e3768005498d0f2d596f87f"
+  EventSize: 100
+  Event:
+    String: |-
+      "kernel_cmdline: /boot/vmlinuz-5.9.0-1-amd64 root=UUID=d4b018ac-5304-4aac-b870-4060a39e2af1 ro quiet\0"
+- EventNum: 114
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "69fe4de0a449562c7a4cb5b82ab8feac17506721"
+  - AlgorithmId: sha256
+    Digest: "aec58054ea5ccfd5cd20c2552d4608f133edcd6c140e52dd354ecfc8afd6c160"
+  EventSize: 43
+  Event:
+    String: |-
+      "grub_cmd: echo Loading initial ramdisk ...\0"
+- EventNum: 115
+  PCRIndex: 8
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "765fe034c1012f3f8316f715ae9586083a9806bd"
+  - AlgorithmId: sha256
+    Digest: "82b0c6adf999518e61394d2963bd451535cc5a479bd0600934de1167e16f8abe"
+  EventSize: 51
+  Event:
+    String: |-
+      "grub_cmd: initrdefi /boot/initrd.img-5.9.0-1-amd64\0"
+- EventNum: 116
+  PCRIndex: 9
+  EventType: EV_IPL
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "66edb86429a90114d3ca3b1094a88c27a7295997"
+  - AlgorithmId: sha256
+    Digest: "a97b0b63f5c4d05b861926d6a012ef3477c23b9dccebf5945d188f4f20c467f1"
+  EventSize: 31
+  Event:
+    String: |-
+      "/boot/initrd.img-5.9.0-1-amd64\0"
+- EventNum: 117
+  PCRIndex: 5
+  EventType: EV_EFI_ACTION
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "443a6b7b82b7af564f2e393cd9d5a388b7fa4a98"
+  - AlgorithmId: sha256
+    Digest: "d8043d6b7b85ad358eb3b6ae6a873ab7ef23a26352c5dc4faa5aeedacf5eb41b"
+  EventSize: 29
+  Event: |-
+    Exit Boot Services Invocation
+- EventNum: 118
+  PCRIndex: 5
+  EventType: EV_EFI_ACTION
+  DigestCount: 2
+  Digests:
+  - AlgorithmId: sha1
+    Digest: "475545ddc978d7bfd036facc7e2e987f48189f0d"
+  - AlgorithmId: sha256
+    Digest: "b54f7542cbd872a81a9d9dea839b2b8d747c7ebd5ea6615c40f42f44a6dbeba0"
+  EventSize: 40
+  Event: |-
+    Exit Boot Services Returned with Success
+pcrs:
+  sha1:
+    0  : 0x5c9814dcefd0aab87dbc981828b6a18f2666d082
+    1  : 0xfda5164bb4d07358c5f0acc4c890bc1418b214c1
+    2  : 0xb2a83b0ebf2f8374299a5b2bdfc31ea955ad7236
+    3  : 0xb2a83b0ebf2f8374299a5b2bdfc31ea955ad7236
+    4  : 0x98a4539e338cde27654adaec4fdac41295ff76a2
+    5  : 0x08bc7e9a78161a49fad60c3a8f16f716998735c3
+    6  : 0xb2a83b0ebf2f8374299a5b2bdfc31ea955ad7236
+    7  : 0x298efffa6436e1d2b13022daff9c307520b934a6
+    8  : 0xd20aa84db659205281622023a47282ffeaf8a261
+    9  : 0x16c1969b387204794ebf9ca33fcebdb5f6c4fba1
+    14 : 0x89c95e5fb97419fad61cd778fcdddcfd35d62b3b
+  sha256:
+    0  : 0xd6f44f2dce5988fbee4e6078375ae5f636defebb6787b50a77727b7a5a9eec28
+    1  : 0x3786c476a5bbd2850dc8743bd120065d712ce660cb370068210035c44ec54107
+    2  : 0x3d458cfe55cc03ea1f443f1562beec8df51c75e14a9fcf9a7234a13f198e7969
+    3  : 0x3d458cfe55cc03ea1f443f1562beec8df51c75e14a9fcf9a7234a13f198e7969
+    4  : 0x80a61a78972dc65fffb59c15bee3d16842b48dee07a30463ac60262c61560833
+    5  : 0x42a647e7ba191681f5ad0d79a8a4d1e41b17a842c8afa6e70dbbf984e117b7be
+    6  : 0x3d458cfe55cc03ea1f443f1562beec8df51c75e14a9fcf9a7234a13f198e7969
+    7  : 0x3bf1555102c76e576bbfa6d5f1ad2f417089e86ebee643369216cb5b360334f8
+    8  : 0xe4d6d9214c0c80d9be5902c1f86332997f4cf365ca40b6d75279662728e62fd2
+    9  : 0xfa5b1810ad9ca852ab5d383357d9bc536fe7dba1b49130b763dfb7c794e568d5
+    14 : 0xa70ca25d69b5b57d018b5813bccd010001f884d6bc0f47aa074049a8b8c0fd05
