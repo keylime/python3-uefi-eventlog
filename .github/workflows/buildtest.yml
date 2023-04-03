@@ -17,13 +17,13 @@ jobs:
       - run: sudo apt-get -y install libefivar-dev pylint python3-pip tpm2-tools
       - run: sudo pip3 install pyright yq
 
-      # step 1: run pylint (python sanity checking)
-      - name: Run pylint
-        run: true
+      # step 1: run pylint (static analysis)
+      - name: Run pylint (static analysis)
+        run: pylint --rcfile pylintrc eventlog/eventlog.py
       
-      # step 2: run pyright (static type checking)
-      - name: Run pyright
-        run: true
+      # step 2: run pyright (checking type hints)
+      - name: Run pyright (checking type hints)
+        run: pyright
 
       # step 3: run event log validation (check event log consistency)
       - name: Run event log validation
