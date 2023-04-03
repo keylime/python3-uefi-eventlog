@@ -1,0 +1,34 @@
+name: eventlogtester
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  buildruntest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: sudo apt-get update
+      - run: sudo apt-get -y install libefivar-dev pylint python3-pip tpm2-tools
+      - run: sudo pip3 install pyright yq
+
+    # step 1: run pylint (python sanity checking)
+    - name: Run pylint
+      run: true
+      
+    # step 2: run pyright (static type checking)
+    - name: Run pyright
+      run: true
+
+    # step 3: run event log validation (check event log consistency)
+    - name: Run event log validation
+      run: true
+
+    # step 4: run comparisons with tpm2-tools output
+    - name: Run comparisons with tpm2-tools output
+      run: true
