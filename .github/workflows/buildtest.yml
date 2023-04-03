@@ -27,8 +27,7 @@ jobs:
 
       # step 3: run event log validation (check event log consistency)
       - name: Run event log validation
-        run: true
 
       # step 4: run comparisons with tpm2-tools output
       - name: Run comparisons with tpm2-tools output
-        run: true
+        run: env PATH=${PATH}:${PWD}/testlogs PYTHONPATH=${PWD} test_compare.py -d ${PWD}/testlogs
