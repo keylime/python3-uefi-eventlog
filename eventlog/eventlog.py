@@ -5,7 +5,7 @@ import hashlib
 import re
 import struct
 import uuid
-from typing import Tuple
+from typing import Tuple, Optional
 
 # ########################################
 # utilities
@@ -73,6 +73,16 @@ class Event(enum.IntEnum):
 
     EV_UNKNOWN = 0xFFFFFFFF
 
+    @staticmethod
+    def int2evt(evtnum: int):
+        """
+        we use this function to transform any integer into an event type
+        """
+        try:
+            return Event(evtnum)
+        except ValueError:
+            return Event.EV_UNKNOWN
+
 
 # ########################################
 # Event digests
@@ -118,7 +128,7 @@ class EfiEventDigest:
         self.digest_size = self.hashalg.digest_size
         self.digest = buffer[idx : idx + self.digest_size]
 
-    def to_json(self):
+    def to_json(self) -> dict:
         """
         JSON converter -- we use this function on every non-natively
         jsonifiable type that requires translation to JSON
@@ -126,13 +136,13 @@ class EfiEventDigest:
         return {"AlgorithmId": self.algid.name, "Digest": self.digest.hex()}
 
     @staticmethod
-    def parselist(digestcount: int, buffer: bytes, idx: int) -> Tuple[dict, int]:
+    def parse_list(digest_count: int, buffer: bytes, idx: int) -> Tuple[dict, int]:
         """
         ----------------------------------------
         parse a list of digests in the event log
         ----------------------------------------
         inputs:
-          digestcount: how many digests to parse
+          digest_count: how many digests to parse
           idx: index in the buffer we are parsing
           buffer: input buffer we are parsing
         outputs:
@@ -141,7 +151,7 @@ class EfiEventDigest:
         """
 
         digests = {}
-        for _ in range(0, digestcount):
+        for _ in range(digest_count):
             (algid,) = struct.unpack("<H", buffer[idx : idx + 2])
             digest = EfiEventDigest(Digest(algid), buffer, idx + 2)
             digests[algid] = digest
@@ -152,6 +162,50 @@ class EfiEventDigest:
 # ########################################
 # EFI event classes
 # ########################################
+
+
+class EventHeader:
+    """
+    TCG PC client platform firmware profile spec, Section 10.2
+    Event header encodes 4 elements present in any event object (event type, pcr index, event data size, list of digests)
+    In addition we also use the event header to transmit the ordinal number of the event in the log.
+    """
+
+    def __init__(self):
+        self.evtype = Event.int2evt(0)
+        self.evpcr = -1
+        self.digests = {}
+        self.evsize = 0
+        self.evidx = 0
+
+    @staticmethod
+    def parse_pcrevent(buffer, evidx, idx) -> Tuple["EventHeader", int]:
+        """
+        TCG PC client platform firmware profile spec, structure: TCG_PCClientPCREVENT, Section 10.2.1
+        """
+        hdr = EventHeader()
+        hdr.evidx = evidx
+        (hdr.evpcr, evtype, digestbuf, hdr.evsize) = struct.unpack(
+            "<II20sI", buffer[idx : idx + 32]
+        )
+        hdr.evtype = Event.int2evt(evtype)
+        hdr.digests = {4: EfiEventDigest(Digest(4), digestbuf, 0)}
+        return hdr, idx + 32
+
+    @staticmethod
+    def parse_pcrevent2(buffer, evidx, idx) -> Tuple["EventHeader", int]:
+        """
+        TCG PC client platform firmware profile spec, structure: TCG_PCR_EVENT2, Section 10.2.2
+        """
+        hdr = EventHeader()
+        hdr.evidx = evidx
+        (hdr.evpcr, evtype, digest_count) = struct.unpack(
+            "<III", buffer[idx : idx + 12]
+        )
+        (hdr.digests, idx) = EfiEventDigest.parse_list(digest_count, buffer, idx + 12)
+        (hdr.evsize,) = struct.unpack("<I", buffer[idx : idx + 4])
+        hdr.evtype = Event.int2evt(evtype)
+        return hdr, idx + 4
 
 
 class GenericEvent:
@@ -187,43 +241,37 @@ class GenericEvent:
     # JSON/hex.
     """
 
-    def __init__(
-        self, eventheader: Tuple[int, int, dict, int, int], buffer: bytes, idx: int
-    ):
-        self.evpcr = eventheader[1]
-        self.digests = eventheader[2]
-        self.evsize = eventheader[3]
-        self.evidx = eventheader[4]
+    def __init__(self, evtheader: EventHeader, buffer: bytes, idx: int):
+        self.evpcr = evtheader.evpcr
+        self.digests = evtheader.digests
+        self.evsize = evtheader.evsize
+        self.evidx = evtheader.evidx
+        self.evtype = evtheader.evtype
         assert (
             len(buffer) >= idx + self.evsize
         ), f"Event log truncated, GenericEvent, evt.idx = {self.evidx}"
         self.evbuf = buffer[idx : idx + self.evsize]
 
-        try:
-            self.evtype = Event(eventheader[0])
-        except Exception as _:
-            self.evtype = Event.EV_UNKNOWN
-
     @classmethod
-    def parse(
-        cls, eventheader: Tuple[int, int, dict, int, int], buffer: bytes, idx: int
-    ):
-        return cls(eventheader, buffer, idx)
+    def parse(cls, evt_header: EventHeader, buffer: bytes, idx: int):
+        return cls(evt_header, buffer, idx)
 
     # pylint: disable=no-self-use
-    def validate(self) -> Tuple[bool, bool, str]:
+    def validate(self) -> Tuple[Optional[bool], str]:
         """
-        validate returns:
-        boolean: True if the validation is vacuous (the event is not self-validating).
-             False otherwise.
-             For vacuous validations the second and third return values will always be "True" and an empty string.
-        boolean: True if validation passed; False otherwise.
-             For passed validations the third return value will always be an empty string.
-        string:  A reason why validation failed. For human consumption, as a debugging help.
+        validate can have three outcomes:
+        * if the validation is vacuous (the event is not self-validating),
+          then validate() returns None, ""
+        * if validation succeeds,
+          then validate() returns True, ""
+        * if validation fails,
+          then validation returns False, <reason>
+          where <reason> is an explanation of why validation failed.
+          <reason> is destined for human consumption, as a debugging help.
         """
-        return True, True, ""
+        return True, ""
 
-    def to_json(self):
+    def to_json(self) -> dict:
         return {
             "EventType": self.evtype.name,
             "EventNum": self.evidx,
@@ -255,8 +303,8 @@ class PostCodeEvent(GenericEvent):
     EV_POST_CODE -- interpreted as a string or else as a blob base/length pair
     """
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         if self.evsize == 16:
             (self.blobBase, self.blobLength) = struct.unpack(
                 "<QQ", buffer[idx : idx + 16]
@@ -279,8 +327,8 @@ class FirmwareBlobEvent(GenericEvent):
     EV_EFI_PLATFORM_FIRMWARE_BLOB EV_EFI_PLATFORM_FIRMWARE_BLOB2
     """
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         (self.base, self.length) = struct.unpack("<QQ", buffer[idx : idx + 16])
 
     def to_json(self) -> dict:
@@ -312,8 +360,8 @@ class SpecIdEvent(GenericEvent):
     of event types.
     """
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         (
             self.signature,
             self.platformClass,
@@ -338,7 +386,7 @@ class SpecIdEvent(GenericEvent):
         (self.vendorInfoSize,) = struct.unpack("<I", buffer[idx : idx + 4])
         self.vendorInfo = buffer[idx + 4 : idx + 4 + self.vendorInfoSize]
 
-    def to_json(self):
+    def to_json(self) -> dict:
         j = super().to_json()
         del j["DigestCount"]
         del j["Digests"]
@@ -368,8 +416,8 @@ class EfiVarEvent(ValidatedEvent):
     types of EFI variable measurements.
     """
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         self.guid = uuid.UUID(bytes_le=buffer[idx : idx + 16])
         self.gg = buffer[idx : idx + 16]
         (self.namelen, self.datalen) = struct.unpack("<QQ", buffer[idx + 16 : idx + 32])
@@ -379,7 +427,7 @@ class EfiVarEvent(ValidatedEvent):
         ]
 
     @classmethod
-    def parse(cls, eventheader: Tuple, buffer: bytes, idx: int):
+    def parse(cls, evt_header: EventHeader, buffer: bytes, idx: int):
         """
         EFI variables are handled differently by tpm2_eventlog
         based on their names or whether they contain booleans.
@@ -391,10 +439,10 @@ class EfiVarEvent(ValidatedEvent):
         (namelen, datalen) = struct.unpack("<QQ", buffer[idx + 16 : idx + 32])
         name = buffer[idx + 32 : idx + 32 + 2 * namelen].decode("utf-16")
         if datalen == 1:
-            return EfiVarBooleanEvent(eventheader, buffer, idx)
+            return EfiVarBooleanEvent(evt_header, buffer, idx)
         if name in ["PK", "KEK", "db", "dbx"]:
-            return EfiSignatureListEvent(eventheader, buffer, idx)
-        return EfiVarEvent(eventheader, buffer, idx)
+            return EfiSignatureListEvent(evt_header, buffer, idx)
+        return EfiVarEvent(evt_header, buffer, idx)
 
     def to_json(self) -> dict:
         return {
@@ -418,21 +466,21 @@ class EfiVarAuthEvent(EfiVarEvent):
     so the current implementation decides based on variable names.
     """
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         self.sigdata = EfiSignatureData(self.data, self.datalen, 0)
 
     @classmethod
-    def parse(cls, eventheader: Tuple, buffer: bytes, idx: int):
+    def parse(cls, evt_header: EventHeader, buffer: bytes, idx: int):
         (namelen, datalen) = struct.unpack("<QQ", buffer[idx + 16 : idx + 32])
         name = buffer[idx + 32 : idx + 32 + 2 * namelen].decode("utf-16")
         if datalen == 1:
-            return EfiVarBooleanEvent(eventheader, buffer, idx)
+            return EfiVarBooleanEvent(evt_header, buffer, idx)
         if name == "MokList":
-            return EfiVarHexEvent(eventheader, buffer, idx)
+            return EfiVarHexEvent(evt_header, buffer, idx)
         if name == "SbatLevel":
-            return EfiVarStringEvent(eventheader, buffer, idx)
-        return EfiVarAuthEvent(eventheader, buffer, idx)
+            return EfiVarStringEvent(evt_header, buffer, idx)
+        return EfiVarAuthEvent(evt_header, buffer, idx)
 
     def to_json(self) -> dict:
         j = super().to_json()
@@ -440,8 +488,8 @@ class EfiVarAuthEvent(EfiVarEvent):
         return j
 
     # signature data are not subject to validation.
-    def validate(self) -> Tuple[bool, bool, str]:
-        return True, True, ""
+    def validate(self) -> Tuple[Optional[bool], str]:
+        return None, ""
 
 
 class EfiVarBooleanEvent(EfiVarEvent):
@@ -449,8 +497,8 @@ class EfiVarBooleanEvent(EfiVarEvent):
     Boolean EFI variable.
     """
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         (self.enabled,) = struct.unpack("<?", self.data[:1])
 
     def to_json(self) -> dict:
@@ -487,8 +535,8 @@ class EfiVarBootEvent(EfiVarEvent):
     EFI_LOAD_OPTION, https://dox.ipxe.org/UefiSpec_8h_source.html, line 2069
     """
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         (self.attributes, self.filepathlistlength) = struct.unpack(
             "<IH", self.data[0:6]
         )
@@ -502,16 +550,16 @@ class EfiVarBootEvent(EfiVarEvent):
         self.devicePath = self.data[8 + desclen : 8 + desclen + devpathlen].hex()
 
     @classmethod
-    def parse(cls, eventheader: Tuple, buffer: bytes, idx: int):
+    def parse(cls, evt_header: EventHeader, buffer: bytes, idx: int):
         (namelen,) = struct.unpack("<Q", buffer[idx + 16 : idx + 24])
         name = buffer[idx + 32 : idx + 32 + 2 * namelen].decode("utf-16")
         if name == "BootOrder":
-            return EfiVarBootOrderEvent(eventheader, buffer, idx)
+            return EfiVarBootOrderEvent(evt_header, buffer, idx)
         if re.compile("^Boot[0-9a-fA-F]{4}$").search(name):
-            return EfiVarBootEvent(eventheader, buffer, idx)
-        return EfiVarEvent(eventheader, buffer, idx)
+            return EfiVarBootEvent(evt_header, buffer, idx)
+        return EfiVarEvent(evt_header, buffer, idx)
 
-    def validate(self) -> Tuple[bool, bool, str]:
+    def validate(self) -> Tuple[Optional[bool], str]:
         """
         The published digest of this event can match either the entire
         event buffer or just the data portion (without the name).
@@ -522,8 +570,8 @@ class EfiVarBootEvent(EfiVarEvent):
             calchash1 = EfiEventDigest.hashalgmap[algid](self.evbuf).digest()
             calchash2 = EfiEventDigest.hashalgmap[algid](self.data).digest()
             if refdigest not in (calchash1, calchash2):
-                return False, False, str(self.name.decode("utf-16"))
-        return False, True, ""
+                return False, str(self.name.decode("utf-16"))
+        return True, ""
 
     def to_json(self) -> dict:
         j = super().to_json()
@@ -541,8 +589,8 @@ class EfiVarBootOrderEvent(EfiVarEvent):
     EFI event describing the BIOS boot order.
     """
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         assert (self.datalen % 2) == 0
         self.bootorder = struct.unpack(f"<{self.datalen//2}H", self.data)
 
@@ -551,14 +599,17 @@ class EfiVarBootOrderEvent(EfiVarEvent):
         j["Event"]["VariableData"] = [f"Boot{b:04x}" for b in self.bootorder]
         return j
 
-    # the published digest can match the entire event buffer or just the data portion (without the name).
-    def validate(self) -> Tuple[bool, bool, str]:
+    def validate(self) -> Tuple[Optional[bool], str]:
+        """
+        the published digest can match the entire event buffer
+        or just the data portion (without the name).
+        """
         for algid, refdigest in self.digests.items():
             calchash1 = EfiEventDigest.hashalgmap[algid](self.evbuf).digest()
             calchash2 = EfiEventDigest.hashalgmap[algid](self.data).digest()
             if refdigest not in (calchash1, calchash2):
-                return False, False, str(self.name.decode("utf-16"))
-        return False, True, ""
+                return False, str(self.name.decode("utf-16"))
+        return True, ""
 
 
 class EfiSignatureListEvent(EfiVarEvent):
@@ -566,8 +617,8 @@ class EfiSignatureListEvent(EfiVarEvent):
     EFI signature event: an EFI variable event for secure boot variables.
     """
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         idx2 = 0
         self.varlist = []
         while idx2 < self.datalen:
@@ -629,8 +680,8 @@ class EfiSignatureData:
 
 
 class EfiActionEvent(GenericEvent):
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         self.event = buffer[idx : idx + self.evsize]
 
     def to_json(self) -> dict:
@@ -708,14 +759,14 @@ class EfiGPTEvent(ValidatedEvent):
                 "PartitionName": nullterm16(self.partitionName),
             }
 
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         self.gptheader = self.GPTPartHeader(buffer, idx)
         idx += self.gptheader.headerSize
         (self.numparts,) = struct.unpack("<Q", buffer[idx : idx + 8])
         idx += 8
         self.partitions = []
-        for _ in range(0, self.numparts):
+        for _ in range(self.numparts):
             self.partitions.append(self.GPTPartEntry(buffer, idx))
             idx += self.gptheader.sizeOfPartitionEntry
 
@@ -737,8 +788,8 @@ class EfiGPTEvent(ValidatedEvent):
 
 
 class UefiImageLoadEvent(GenericEvent):
-    def __init__(self, eventheader: Tuple, buffer: bytes, idx: int):
-        super().__init__(eventheader, buffer, idx)
+    def __init__(self, evt_header: EventHeader, buffer: bytes, idx: int):
+        super().__init__(evt_header, buffer, idx)
         (
             self.addrinmem,
             self.lengthinmem,
@@ -775,43 +826,23 @@ class EventLog(list):
     def __init__(self, buffer: bytes, buflen: int):
         """
         The constructor, when invoked on a buffer, performs the parsing
+        NOTE The first event is parsed differently because it has a different
+        structure from all the others.
         """
         list.__init__(self)
         self.buflen = buflen
-        evt, idx = EventLog.parse_1stevent(buffer, 0)
-        self.append(evt)
-        evidx = 1
+        evidx = 0
+        idx = 0
         while idx < buflen:
-            evt, idx = EventLog.parse_event(evidx, buffer, idx)
+            if idx == 0:
+                hdr, idx = EventHeader.parse_pcrevent(buffer, evidx, idx)
+                evt = SpecIdEvent(hdr, buffer, idx)
+            else:
+                hdr, idx = EventHeader.parse_pcrevent2(buffer, evidx, idx)
+                evt = EventLog.Handler(hdr.evtype)(hdr, buffer, idx)
             self.append(evt)
+            idx += hdr.evsize
             evidx += 1
-
-    @staticmethod
-    def parse_1stevent(buffer: bytes, idx: int) -> Tuple[GenericEvent, int]:
-        """
-        parser for 1st event
-        TCG PC client platform firmware profile spec, structure: TCG_PCClientPCREvent, Section 10.2.1
-        """
-        (evpcr, evtype, digestbuf, evsize) = struct.unpack(
-            "<II20sI", buffer[idx : idx + 32]
-        )
-        digests = {4: EfiEventDigest(Digest(4), digestbuf, 0)}
-        evt = SpecIdEvent((evtype, evpcr, digests, evsize, 0), buffer, idx + 32)
-        return (evt, idx + 32 + evsize)
-
-    @staticmethod
-    def parse_event(evidx: int, buffer: bytes, idx: int) -> Tuple[GenericEvent, int]:
-        """
-        parser for all other events
-        TCG PC client platform firmware profile spec, structure: TCG_PCR_EVENT2, Section 10.2.2
-        """
-        (evpcr, evtype, digestcount) = struct.unpack("<III", buffer[idx : idx + 12])
-        digests, idx = EfiEventDigest.parselist(digestcount, buffer, idx + 12)
-        (evsize,) = struct.unpack("<I", buffer[idx : idx + 4])
-        evt = EventLog.Handler(evtype)(
-            (evtype, evpcr, digests, evsize, evidx), buffer, idx + 4
-        )
-        return (evt, idx + 4 + evsize)
 
     @staticmethod
     def Handler(evtype: int):
@@ -848,7 +879,7 @@ class EventLog(list):
         d0 = EfiEventDigest.hashalgmap[algid]()
         pcrs = {}
         for event in self:
-            if event.evtype == 3:
+            if event.evtype == Event.EV_NO_ACTION:
                 continue  # do not measure NoAction events
             pcridx = event.evpcr
             oldpcr = pcrs[pcridx] if pcridx in pcrs else bytes(d0.digest_size)
@@ -857,26 +888,17 @@ class EventLog(list):
             pcrs[pcridx] = newpcr
         return pcrs
 
-    def validate(self) -> list[list[Tuple]]:
+    def validate(self) -> list[Tuple]:
         """
-        run validation on all events
-        returns a triplet of lists
-        in the first list are all events that are vacuously valid (no self-validation)
-        in the second list are all events that have passed validation
-        in the third list are all events that have failed validation
-
+        run validation on all events.
+        returns a list of all failed validations.
         THIS IS PROBABLY TEMPORARY. It is a useful debugging tool, but the production use
         will most likely demand a single boolean answer (passed/failed)
         """
-        pass_list = []
         fail_list = []
-        vac_list = []
         for evt in self:
-            vacuous, passed, why = evt.validate()
-            if vacuous:
-                vac_list.append((evt.evidx, evt.evtype.name, type(evt)))
-            elif passed:
-                pass_list.append((evt.evidx, evt.evtype.name, type(evt)))
-            else:
-                fail_list.append((evt.evidx, evt.evtype.name, type(evt), why))
-        return [vac_list, pass_list, fail_list]
+            passed, why = evt.validate()
+            if passed in (None, True):
+                continue
+            fail_list.append((evt.evidx, evt.evtype.name, type(evt), why))
+        return fail_list

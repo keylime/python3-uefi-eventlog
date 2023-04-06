@@ -14,8 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo apt-get update
-      - run: sudo apt-get -y install libefivar-dev pylint python3-pip tpm2-tools
+      - run: sudo apt-get -y install libefivar-dev pylint python3-pip tpm2-tools black
       - run: sudo pip3 install pyright yq
+
+      # syntax checking
+      - name: Run black
+        run: black --check      
 
       # step 1: run pylint (static analysis)
       - name: Run pylint (static analysis)
