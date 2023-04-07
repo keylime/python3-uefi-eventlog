@@ -869,8 +869,7 @@ class EventLog(list):
         ev = Event(evtype)
         if ev in EventHandlers:
             return EventHandlers[ev]
-        else:
-            return GenericEvent.parse
+        return GenericEvent.parse
 
     def pcrs(self) -> dict:
         """
