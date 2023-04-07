@@ -29,7 +29,7 @@ def binary2json(binarylogfile: str):
     with open (binarylogfile, 'rb') as fp:
         buffer = fp.read()
         testlogbin = eventlog.EventLog(buffer, len(buffer))
-        testlog = json.dumps(testlogbin, default=lambda o: o.toJson(), sort_keys=True)
+        testlog = json.dumps(testlogbin, default=lambda o: o.to_json(), sort_keys=True)
         return testlog
 
 def compare_log (jsonreflog, jsontestlog, failedeventtypes={}):
@@ -60,9 +60,10 @@ def compare_dir (dirname, parseddir):
         
         # step 1: read the reference log
         try:
-            logname = logdir + '/' + parseddir + '/' + logname.replace('.bin', '.json')
-            with open (logname, 'r') as fp:
+            reflogname = logdir + '/' + parseddir + '/' + logname.replace('.bin', '.json')
+            with open (reflogname, 'r') as fp:
                 reflog = fp.read()
+                reflen = 1
         except Exception as e:
             etotal+= 1
             evttotal += 1
@@ -73,9 +74,9 @@ def compare_dir (dirname, parseddir):
         try:
             jsontestlog = binary2json(binarylog)
         except Exception as e:
-            err = 1
+            err = reflen
             etotal+= err
-            evttotal += reflen
+            evttotal += err
             print("|%-30.30s|%7d|%7d|%6.2f%%|testlog fail: %s"%(logname, reflen, err, 100.0*err/reflen, str(e)))
             continue
 
@@ -83,7 +84,7 @@ def compare_dir (dirname, parseddir):
         try:
             [reflen, err, failedeventtypes] = compare_log(reflog, jsontestlog, failedeventtypes)
         except:
-            err = len(reflog)
+            err = reflen
 
         etotal+= err
         evttotal += reflen

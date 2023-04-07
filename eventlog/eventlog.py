@@ -5,7 +5,7 @@ import hashlib
 import re
 import struct
 import uuid
-from typing import Optional, Tuple
+from typing import Callable, Optional, Tuple
 
 # ########################################
 # utilities
@@ -290,12 +290,12 @@ class ValidatedEvent(GenericEvent):
     EV_S_CRTM_VERSION EV_EFI_VARIABLE_DRIVER_CONFIG EV_SEPARATOR EV_EFI_GPT_EVENT EV_EFI_VARIABLE_BOOT
     """
 
-    def validate(self) -> Tuple[bool, bool, str]:
+    def validate(self) -> Tuple[Optional[bool], str]:
         for algid, refdigest in self.digests.items():
             calchash1 = EfiEventDigest.hashalgmap[algid](self.evbuf).digest()
-            if refdigest != calchash1:
-                return False, False, str(self.evtype.name)
-        return False, True, ""
+            if refdigest.digest != calchash1:
+                return False, str(self.evtype.name)
+        return True, ""
 
 
 class PostCodeEvent(GenericEvent):
@@ -569,7 +569,7 @@ class EfiVarBootEvent(EfiVarEvent):
         for algid, refdigest in self.digests.items():
             calchash1 = EfiEventDigest.hashalgmap[algid](self.evbuf).digest()
             calchash2 = EfiEventDigest.hashalgmap[algid](self.data).digest()
-            if refdigest not in (calchash1, calchash2):
+            if refdigest.digest not in (calchash1, calchash2):
                 return False, str(self.name.decode("utf-16"))
         return True, ""
 
@@ -607,7 +607,7 @@ class EfiVarBootOrderEvent(EfiVarEvent):
         for algid, refdigest in self.digests.items():
             calchash1 = EfiEventDigest.hashalgmap[algid](self.evbuf).digest()
             calchash2 = EfiEventDigest.hashalgmap[algid](self.data).digest()
-            if refdigest not in (calchash1, calchash2):
+            if refdigest.digest not in (calchash1, calchash2):
                 return False, str(self.name.decode("utf-16"))
         return True, ""
 
@@ -845,7 +845,7 @@ class EventLog(list):
             evidx += 1
 
     @staticmethod
-    def Handler(evtype: int):
+    def Handler(evtype: int) -> Callable:
         """
         figure out which Event constructor to call depending on event type
         """
@@ -866,9 +866,10 @@ class EventLog(list):
             Event.EV_EFI_VARIABLE_AUTHORITY: EfiVarAuthEvent.parse,
             Event.EV_S_CRTM_VERSION: ValidatedEvent.parse,
         }
-        try:
-            return EventHandlers[Event(evtype)]
-        except Exception as _:
+        ev = Event(evtype)
+        if ev in EventHandlers:
+            return EventHandlers[ev]
+        else:
             return GenericEvent.parse
 
     def pcrs(self) -> dict:
@@ -901,4 +902,5 @@ class EventLog(list):
             if passed in (None, True):
                 continue
             fail_list.append((evt.evidx, evt.evtype.name, type(evt), why))
+
         return fail_list

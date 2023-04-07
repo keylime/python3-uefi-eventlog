@@ -22,7 +22,7 @@ it as below to produce JSON output:
 
 	...
 	# dump the event log in JSON form
-        print(json.dumps(evlog, default=lambda o: o.toJson(), indent=4))
+        print(json.dumps(evlog, default=lambda o: o.to_json(), indent=4))
 
 	...
 	# print out the event validation status
@@ -33,6 +33,8 @@ it as below to produce JSON output:
 	print(evlog.getpcrs())
 
 ```
+
+Example code for dumping JSON is included in `examples/evlog2json.py`
 
 ## Design principle
 
