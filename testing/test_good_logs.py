@@ -37,12 +37,13 @@ def compare_log (jsonreflog, jsontestlog, failedeventtypes={}):
     reflen = len(reflog)
     testlog = json.loads(jsontestlog)
     errors = 0
+    failedeventindices=[]
     for idx in range(0, reflen):
         if reflog[idx] != testlog[idx]:
             errors += 1
             failedeventtypes[reflog[idx]['EventType']] = True
-
-    return (reflen, errors, failedeventtypes)
+            failedeventindices.append(idx)
+    return (reflen, errors, failedeventtypes, failedeventindices)
 
 def compare_dir (dirname, parseddir):
     binarylogs = glob.glob(dirname + '/*/*.bin')
@@ -82,13 +83,14 @@ def compare_dir (dirname, parseddir):
 
         # step 3: compare both JSON logs
         try:
-            [reflen, err, failedeventtypes] = compare_log(reflog, jsontestlog, failedeventtypes)
+            [reflen, err, failedeventtypes, failedeventindices] = compare_log(reflog, jsontestlog, failedeventtypes)
         except:
             err = reflen
+            failedeventindices=[]
 
         etotal+= err
         evttotal += reflen
-        print("|%-30.30s|%7d|%7d|%6.2f%%|"%(logname, reflen, err, 100.0*err/reflen))
+        print("|%-30.30s|%7d|%7d|%6.2f%%|%s"%(logname, reflen, err, 100.0*err/reflen, '' if len(failedeventindices) == 0 else failedeventindices))
 
     print("+------------------------------+-------+--------+------+")
     print("|     Totals:                  |%7d|%7d|%6.2f%%|"%(evttotal, etotal, 100.0*etotal/evttotal))
