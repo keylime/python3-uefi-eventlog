@@ -14,18 +14,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo apt-get update
-      - run: sudo apt-get -y install libefivar-dev pylint python3-pip tpm2-tools black
+      - run: sudo apt-get -y install libefivar-dev pylint python3-pip tpm2-tools black isort
       - run: sudo pip3 install pyright yq
 
-      # syntax checking
+      # syntax checking: black
       - name: Run black
-        run: black --check      
+        run: black --check eventlog/eventlog.py
 
-      # step 1: run pylint (static analysis)
+      # syntax checking: isort
+      - name: Run isort
+        run: isort --check-only eventlog/eventlog.py
+
+      # syntax checking: pylint
       - name: Run pylint (static analysis)
         run: pylint --rcfile pylintrc eventlog/eventlog.py
       
-      # step 2: run pyright (checking type hints)
+      # type checking: pyright (checking type hints)
       - name: Run pyright (checking type hints)
         run: pyright
 

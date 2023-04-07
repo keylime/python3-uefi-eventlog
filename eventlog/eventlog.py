@@ -5,7 +5,7 @@ import hashlib
 import re
 import struct
 import uuid
-from typing import Tuple, Optional
+from typing import Optional, Tuple
 
 # ########################################
 # utilities
@@ -829,7 +829,7 @@ class EventLog(list):
         NOTE The first event is parsed differently because it has a different
         structure from all the others.
         """
-        list.__init__(self)
+        super().__init__(self)
         self.buflen = buflen
         evidx = 0
         idx = 0
