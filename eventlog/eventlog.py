@@ -104,6 +104,16 @@ class Digest(enum.IntEnum):
     sha3_256 = 0x28
     sha3_512 = 0x29
 
+    @staticmethod
+    def int2digest(algid: int):
+        """
+        incomplete translation of algorithm id !!!
+        """
+        try:
+            return Digest(algid)
+        except ValueError:
+            return Digest.sha1
+
 
 class EfiEventDigest:
     """
@@ -373,16 +383,11 @@ class SpecIdEvent(GenericEvent):
         ) = struct.unpack("<16sIBBBBI", buffer[idx + 0 : idx + 28])
         idx += 28
         self.alglist = []
-        for x in range(0, self.numberOfAlgorithms):
+        for i in range(self.numberOfAlgorithms):
             (algid, digsize) = struct.unpack("<HH", buffer[idx : idx + 4])
             idx += 4
-            self.alglist.append(
-                {
-                    f"Algorithm[{x}]": None,
-                    "algorithmId": Digest(algid).name,
-                    "digestSize": digsize,
-                }
-            )
+            alg = Digest.int2digest(algid)
+            self.alglist.append((i, alg, digsize))
         (self.vendorInfoSize,) = struct.unpack("<I", buffer[idx : idx + 4])
         self.vendorInfo = buffer[idx + 4 : idx + 4 + self.vendorInfoSize]
 
@@ -391,6 +396,15 @@ class SpecIdEvent(GenericEvent):
         del j["DigestCount"]
         del j["Digests"]
         del j["Event"]
+        algorithms = []
+        for alg in self.alglist:
+            algorithms.append(
+                {
+                    f"Algorithm[{alg[0]}]": None,
+                    "algorithmId": alg[1].name,
+                    "digestSize": alg[2],
+                }
+            )
         j["Digest"] = self.digests[Digest.sha1].digest.hex()
         j["SpecID"] = [
             {
@@ -402,7 +416,7 @@ class SpecIdEvent(GenericEvent):
                 "uintnSize": self.uintnSize,
                 "vendorInfoSize": self.vendorInfoSize,
                 "numberOfAlgorithms": self.numberOfAlgorithms,
-                "Algorithms": self.alglist,
+                "Algorithms": algorithms,
             }
         ]
         if self.vendorInfoSize > 0:
@@ -873,19 +887,28 @@ class EventLog(list):
 
     def pcrs(self) -> dict:
         """
-        calculate the expected PCR values
+        Calculate the expected TPM PCR values by replaying the event
+        log and extending a virtual set of PCRS. Do this for every
+        hash algorithm registered in the first event (the SpecID
+        event).
         """
-        algid = Digest.sha1
-        d0 = EfiEventDigest.hashalgmap[algid]()
         pcrs = {}
-        for event in self:
-            if event.evtype == Event.EV_NO_ACTION:
-                continue  # do not measure NoAction events
-            pcridx = event.evpcr
-            oldpcr = pcrs[pcridx] if pcridx in pcrs else bytes(d0.digest_size)
-            extdata = event.digests[algid].digest
-            newpcr = EfiEventDigest.hashalgmap[algid](oldpcr + extdata).digest()
-            pcrs[pcridx] = newpcr
+        for alg in self[0].alglist:
+            algname = alg[1].name
+            d0 = EfiEventDigest.hashalgmap[alg[1]]()
+            pcrs[algname] = {}
+            for event in self:
+                if event.evtype == Event.EV_NO_ACTION:
+                    continue  # do not measure NoAction events
+                pcridx = event.evpcr
+                oldpcr = (
+                    pcrs[algname][pcridx]
+                    if pcridx in pcrs[algname]
+                    else bytes(d0.digest_size)
+                )
+                extdata = event.digests[alg[1]].digest
+                newpcr = EfiEventDigest.hashalgmap[alg[1]](oldpcr + extdata).digest()
+                pcrs[algname][pcridx] = newpcr
         return pcrs
 
     def validate(self) -> list[Tuple]:

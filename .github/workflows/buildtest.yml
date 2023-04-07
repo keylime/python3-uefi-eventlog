@@ -41,3 +41,7 @@ jobs:
       - name: Run comparisons with tpm2-tools output
         run: env PATH=${PATH}:${PWD}/testing PYTHONPATH=${PWD} test_good_logs.py -d ${PWD}/testing/good_logs
 
+      # good log testing: comparisons with tpm2-tools output generated PCR values
+      - name: run comparisons with tpm2-tools output for expected PCR values
+        run: env PATH=${PATH}:${PWD}/testing PYTHONPATH=${PWD} validate_pcrs.py -d ${PWD}/testing/good_logs
+	
