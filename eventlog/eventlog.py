@@ -5,7 +5,7 @@ import hashlib
 import re
 import struct
 import uuid
-from typing import Optional, Tuple
+from typing import Callable, Optional, Tuple
 
 # ########################################
 # utilities
@@ -103,6 +103,16 @@ class Digest(enum.IntEnum):
     sha3_224 = 0x27
     sha3_256 = 0x28
     sha3_512 = 0x29
+
+    @staticmethod
+    def int2digest(algid: int):
+        """
+        incomplete translation of algorithm id !!!
+        """
+        try:
+            return Digest(algid)
+        except ValueError:
+            return Digest.sha1
 
 
 class EfiEventDigest:
@@ -290,12 +300,12 @@ class ValidatedEvent(GenericEvent):
     EV_S_CRTM_VERSION EV_EFI_VARIABLE_DRIVER_CONFIG EV_SEPARATOR EV_EFI_GPT_EVENT EV_EFI_VARIABLE_BOOT
     """
 
-    def validate(self) -> Tuple[bool, bool, str]:
+    def validate(self) -> Tuple[Optional[bool], str]:
         for algid, refdigest in self.digests.items():
             calchash1 = EfiEventDigest.hashalgmap[algid](self.evbuf).digest()
-            if refdigest != calchash1:
-                return False, False, str(self.evtype.name)
-        return False, True, ""
+            if refdigest.digest != calchash1:
+                return False, str(self.evtype.name)
+        return True, ""
 
 
 class PostCodeEvent(GenericEvent):
@@ -373,16 +383,11 @@ class SpecIdEvent(GenericEvent):
         ) = struct.unpack("<16sIBBBBI", buffer[idx + 0 : idx + 28])
         idx += 28
         self.alglist = []
-        for x in range(0, self.numberOfAlgorithms):
+        for i in range(self.numberOfAlgorithms):
             (algid, digsize) = struct.unpack("<HH", buffer[idx : idx + 4])
             idx += 4
-            self.alglist.append(
-                {
-                    f"Algorithm[{x}]": None,
-                    "algorithmId": Digest(algid).name,
-                    "digestSize": digsize,
-                }
-            )
+            alg = Digest.int2digest(algid)
+            self.alglist.append((i, alg, digsize))
         (self.vendorInfoSize,) = struct.unpack("<I", buffer[idx : idx + 4])
         self.vendorInfo = buffer[idx + 4 : idx + 4 + self.vendorInfoSize]
 
@@ -391,6 +396,15 @@ class SpecIdEvent(GenericEvent):
         del j["DigestCount"]
         del j["Digests"]
         del j["Event"]
+        algorithms = []
+        for alg in self.alglist:
+            algorithms.append(
+                {
+                    f"Algorithm[{alg[0]}]": None,
+                    "algorithmId": alg[1].name,
+                    "digestSize": alg[2],
+                }
+            )
         j["Digest"] = self.digests[Digest.sha1].digest.hex()
         j["SpecID"] = [
             {
@@ -402,7 +416,7 @@ class SpecIdEvent(GenericEvent):
                 "uintnSize": self.uintnSize,
                 "vendorInfoSize": self.vendorInfoSize,
                 "numberOfAlgorithms": self.numberOfAlgorithms,
-                "Algorithms": self.alglist,
+                "Algorithms": algorithms,
             }
         ]
         if self.vendorInfoSize > 0:
@@ -569,7 +583,7 @@ class EfiVarBootEvent(EfiVarEvent):
         for algid, refdigest in self.digests.items():
             calchash1 = EfiEventDigest.hashalgmap[algid](self.evbuf).digest()
             calchash2 = EfiEventDigest.hashalgmap[algid](self.data).digest()
-            if refdigest not in (calchash1, calchash2):
+            if refdigest.digest not in (calchash1, calchash2):
                 return False, str(self.name.decode("utf-16"))
         return True, ""
 
@@ -607,7 +621,7 @@ class EfiVarBootOrderEvent(EfiVarEvent):
         for algid, refdigest in self.digests.items():
             calchash1 = EfiEventDigest.hashalgmap[algid](self.evbuf).digest()
             calchash2 = EfiEventDigest.hashalgmap[algid](self.data).digest()
-            if refdigest not in (calchash1, calchash2):
+            if refdigest.digest not in (calchash1, calchash2):
                 return False, str(self.name.decode("utf-16"))
         return True, ""
 
@@ -845,7 +859,7 @@ class EventLog(list):
             evidx += 1
 
     @staticmethod
-    def Handler(evtype: int):
+    def Handler(evtype: int) -> Callable:
         """
         figure out which Event constructor to call depending on event type
         """
@@ -866,26 +880,35 @@ class EventLog(list):
             Event.EV_EFI_VARIABLE_AUTHORITY: EfiVarAuthEvent.parse,
             Event.EV_S_CRTM_VERSION: ValidatedEvent.parse,
         }
-        try:
-            return EventHandlers[Event(evtype)]
-        except Exception as _:
-            return GenericEvent.parse
+        ev = Event(evtype)
+        if ev in EventHandlers:
+            return EventHandlers[ev]
+        return GenericEvent.parse
 
     def pcrs(self) -> dict:
         """
-        calculate the expected PCR values
+        Calculate the expected TPM PCR values by replaying the event
+        log and extending a virtual set of PCRS. Do this for every
+        hash algorithm registered in the first event (the SpecID
+        event).
         """
-        algid = Digest.sha1
-        d0 = EfiEventDigest.hashalgmap[algid]()
         pcrs = {}
-        for event in self:
-            if event.evtype == Event.EV_NO_ACTION:
-                continue  # do not measure NoAction events
-            pcridx = event.evpcr
-            oldpcr = pcrs[pcridx] if pcridx in pcrs else bytes(d0.digest_size)
-            extdata = event.digests[algid].digest
-            newpcr = EfiEventDigest.hashalgmap[algid](oldpcr + extdata).digest()
-            pcrs[pcridx] = newpcr
+        for alg in self[0].alglist:
+            algname = alg[1].name
+            d0 = EfiEventDigest.hashalgmap[alg[1]]()
+            pcrs[algname] = {}
+            for event in self:
+                if event.evtype == Event.EV_NO_ACTION:
+                    continue  # do not measure NoAction events
+                pcridx = event.evpcr
+                oldpcr = (
+                    pcrs[algname][pcridx]
+                    if pcridx in pcrs[algname]
+                    else bytes(d0.digest_size)
+                )
+                extdata = event.digests[alg[1]].digest
+                newpcr = EfiEventDigest.hashalgmap[alg[1]](oldpcr + extdata).digest()
+                pcrs[algname][pcridx] = newpcr
         return pcrs
 
     def validate(self) -> list[Tuple]:
@@ -901,4 +924,5 @@ class EventLog(list):
             if passed in (None, True):
                 continue
             fail_list.append((evt.evidx, evt.evtype.name, type(evt), why))
+
         return fail_list
